@@ -36,6 +36,15 @@ const months = [
   "Novembro",
   "Dezembro",
 ];
+const daysOfWeek = [
+  "Domingo",
+  "Segunda",
+  "Terça",
+  "Quarta",
+  "Quinta",
+  "Sexta",
+  "Sabado"];
+
 
 // const eventsArr = [
 //   {
@@ -68,7 +77,7 @@ function initCalendar() {
   const lastDate = lastDay.getDate();
   const day = firstDay.getDay();
   const nextDays = 7 - lastDay.getDay() - 1;
-  
+
 
   date.innerHTML = months[month] + " " + year;
 
@@ -227,15 +236,15 @@ function gotoDate() {
       return;
     }
   }
-  alert("Invalid Date");
+  alert("Data Inválida");
 }
 
 //function get active day day name and date and update eventday eventdate
 function getActiveDay(date) {
   const day = new Date(year, month, date);
-  const dayName = day.toString().split(" ")[0];
+  const dayName = daysOfWeek[day.getDay()];  // Pegando o nome do dia em pt-BR
   eventDay.innerHTML = dayName;
-  eventDate.innerHTML = date + " " + months[month] + " " + year;
+  eventDate.innerHTML = date + " de " + months[month] + " de " + year;
 }
 
 //function update events when a day is active
@@ -318,7 +327,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Por favor, Preencha todos os campos");
     return;
   }
 
@@ -356,7 +365,7 @@ addEventSubmit.addEventListener("click", () => {
     }
   });
   if (eventExist) {
-    alert("Event already added");
+    alert("Esse evento já foi adicionado");
     return;
   }
   const newEvent = {
@@ -404,7 +413,7 @@ addEventSubmit.addEventListener("click", () => {
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
-    if (confirm("Are you sure you want to delete this event?")) {
+    if (confirm("Você tem certeza que deseja Desmarcar?")) {
       const eventTitle = e.target.children[0].children[1].innerHTML;
       eventsArr.forEach((event) => {
         if (
