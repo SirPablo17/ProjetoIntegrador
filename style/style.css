@@ -85,7 +85,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     background: #771127;
-    height: 13vh;
+    height: 9vh;
 }
 
 
@@ -135,9 +135,9 @@ main {
 
 /* Topo do site */
 
-section {
+#topoDoSite {
 
-    padding-top: 150px;
+   padding-top: 150px;
 
 }
 
@@ -203,7 +203,7 @@ section #topoDoSite {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 60px;
     font-size: 30px;
     color: #771127;
 
