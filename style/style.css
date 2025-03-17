@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
+/* ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
     font-family: "Host Grotesk", sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -13,12 +14,36 @@ html {
 
 }
 
-body {
-    color: #ECD8E0;
+.container {
+
+    margin: 0 auto;
 
 }
 
-/* Barra de navegação */
+.flex {
+
+    display: flex;
+
+}
+
+body {
+    background-color: #ECD8E0;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
 .nav-list a {
     text-decoration: none;
     color: #ECD8E0;
@@ -108,6 +133,115 @@ main {
     transition: 0.3s;
 }
 
+/* Topo do site */
+
+section {
+
+    padding-top: 150px;
+
+}
+
+section #topoDoSite {
+
+    padding: 90px 4%;
+}
+
+#topoDoSite .flex {
+
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+#topoDoSite h1 {
+
+ 
+    color: #771127;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+#topoDoSite .txtTopoSite p{
+
+
+    font-size: 18px;
+    color: #771127;
+    margin: 25px 0;
+
+}
+#topoDoSite .imgTopoSite img {
+
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes flutuar {
+
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 30px;
+    }
+    
+}
+
+/* Especialidades */
+
+#especialidades .flex {
+
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#especialidades .interface h2 {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 30px;
+    color: #771127;
+
+}
+
+#especialidades .especialidadesBox {
+    width: 400px;
+    color: #771127;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin-top: 45px;
+}
+
+#especialidades .especialidadesBox:hover {
+
+    transform: scale(1.05);
+    transition: 0.6s;
+    box-shadow: 0 0 8px #fff;
+    background-color: #771127;
+    color: #ECD8E0;
+    cursor: pointer;
+}
+
+#especialidades .especialidadesBox i {
+    
+    font-size: 70px;
+
+}
+
+#especialidades .especialidadesBox h3 {
+    
+    font-size: 28px;
+    margin: 15px 0;
+
+}
+
+
+/* Ajustando para Mobile*/
 @media (max-width: 999px) {
     body {
         overflow-x: hidden;

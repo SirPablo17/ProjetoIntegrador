@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 /* nice scroll bar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -27,7 +28,8 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
-  background-color: #e2e1dc;
+  background-color: #ECD8E0;
+  
 }
 .container {
   position: relative;
