@@ -1,17 +1,23 @@
 @import url("style.css");
 
 body {
-   background-color: #ECD8E0;
+    background-color: var(--cor-primaria);
 
 }
 
 main {
-    display: flex; /* Usar flexbox para centralizar */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    width: 500px; /* Mantém a largura desejada */
-    height: 500px; /* Mantém a altura desejada */
-    margin: 0 auto; /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/
+    display: flex;
+    /* Usar flexbox para centralizar */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    width: 500px;
+    /* Mantém a largura desejada */
+    height: 500px;
+    /* Mantém a altura desejada */
+    margin: 0 auto;
+    /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/
 }
 
 .login {
@@ -24,7 +30,7 @@ main {
 
 
 
-.forms {  
+.forms {
     background: #771127;
     display: flex;
     align-content: center;
@@ -33,37 +39,41 @@ main {
     width: 25vw;
     height: 50vh;
     padding: 0% 10%;
-    
+
     margin: 0 auto;
     border-radius: 50px;
 }
+
 div.login img.login_logo_logo {
-    width: 40%; /* A imagem ocupará 100% da largura do contêiner pai */
-    height: auto; /* A altura se ajustará proporcionalmente */
-    object-fit: contain; /* Mantém a proporção original */
+    width: 40%;
+    /* A imagem ocupará 100% da largura do contêiner pai */
+    height: auto;
+    /* A altura se ajustará proporcionalmente */
+    object-fit: contain;
+    /* Mantém a proporção original */
     margin: 0 auto 10% auto;
-    display: block;  
+    display: block;
 }
 
-.login_usuario_forms{
+.login_usuario_forms {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    text-align: end;
+
     gap: 10px;
     color: #ECD8E0;
 }
 
 
-.login_usuario_forms:visited{
+.login_usuario_forms:visited {
     appearance: none;
     color: #ECD8E0;
     text-decoration: none;
 }
 
-.login_usuario_forms a{
+.login_usuario_forms a {
     text-decoration: none;
-    color: #ECD8E0;  
+    color: #ECD8E0;
 }
 
 
@@ -76,23 +86,47 @@ div.login img.login_logo_logo {
     text-align: end;
 }
 
-.forms input:focus{
+.forms input:focus {
     appearance: none;
     background-color: transparent;
-    
+
     border-color: blue;
     outline: #ECD8E0 solid 2px;
     border-radius: 5px;
 }
 
-.login_botoes{
+.login_botoes {
     display: flex;
 }
 
-.botao_acao{
+.botao_acao {
     background-color: transparent;
+    border-width: 10px;
     text-decoration: none;
-    border: transparent;
-   color: #ECD8E0;
-   margin-top: 10%;
+    border: #771127;
+    color: #771127;
+    background-color: #ECD8E0;
+    margin-top: 10%;
+    width: 30%;
+    border-radius: 7px;
+
+}
+
+.botao_acao:hover {
+
+    cursor: pointer;
+    background-color: #771127;
+    color: #ECD8E0;
+    transition: 0.7s;
+    border: #ECD8E0 1px solid;
+}
+
+
+.centralizar_botao {
+
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+
+
 }
