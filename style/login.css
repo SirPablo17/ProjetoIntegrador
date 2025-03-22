@@ -18,6 +18,8 @@ main {
     /* Mantém a altura desejada */
     margin: 0 auto;
     /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/
+    
+    
 }
 
 .login {
@@ -25,6 +27,7 @@ main {
     align-content: center;
     justify-content: flex-start;
     margin-top: 30vh;
+
 }
 
 
@@ -39,9 +42,10 @@ main {
     width: 25vw;
     height: 50vh;
     padding: 0% 10%;
-
+    box-shadow: 0px 19px 79px 0px rgba(119,17,39,0.24);
+    box-shadow: 0px 19px 79px 0px rgba(119,17,39,0.24),0px 17px 100px 18px rgba(119,17,39,0.24);
     margin: 0 auto;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 div.login img.login_logo_logo {
@@ -83,14 +87,11 @@ div.login img.login_logo_logo {
     color: #ECD8E0;
     background-color: transparent;
     border-bottom: #ECD8E0 1px solid;
-    text-align: end;
 }
 
 .forms input:focus {
     appearance: none;
     background-color: transparent;
-
-    border-color: blue;
     outline: #ECD8E0 solid 2px;
     border-radius: 5px;
 }
@@ -109,7 +110,8 @@ div.login img.login_logo_logo {
     margin-top: 10%;
     width: 30%;
     border-radius: 7px;
-
+    padding: 1rem;
+    width: 12rem;
 }
 
 .botao_acao:hover {
@@ -126,7 +128,6 @@ div.login img.login_logo_logo {
 
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 8vh;
-
-
 }
