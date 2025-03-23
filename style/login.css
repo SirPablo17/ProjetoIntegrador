@@ -107,8 +107,8 @@ div.login img.login_logo_logo {
     border: #771127;
     color: #771127;
     background-color: #ECD8E0;
-    margin-top: 10%;
-    width: 30%;
+    margin-top: 10px;
+    width: 30px;
     border-radius: 7px;
     padding: 1rem;
     width: 12rem;
@@ -130,4 +130,13 @@ div.login img.login_logo_logo {
     justify-content: center;
     align-items: center;
     height: 8vh;
+}
+.criar_conta{
+    gap: 10px;
+    display: flex;
+}
+
+.criar_conta a{
+    color: #ECD8E0;
+    text-decoration: none;
 }
