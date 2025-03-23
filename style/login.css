@@ -80,6 +80,10 @@ div.login img.login_logo_logo {
     color: #ECD8E0;
 }
 
+.login_usuario_forms a:hover {
+    text-decoration:underline;
+}
+
 
 .forms input {
     border: none;
@@ -131,21 +135,22 @@ div.login img.login_logo_logo {
     align-items: center;
     height: 8vh;
 }
+
 .criar_conta{
-    gap: 10px;
+    margin-top:5%;
     display: flex;
-    margin-top:5% ;
+   /* justify-content: end;*/
 }
 
 .criar_conta p{
     color: #ECD8E0;
-
+    margin:10px;
 }
 
 .criar_conta button{
     background-color: transparent;
     color: #ECD8E0;
-    padding: 10px ;
+    padding: 10px;
     border-radius: 7px;
     border: #ECD8E0 1px solid;
 
