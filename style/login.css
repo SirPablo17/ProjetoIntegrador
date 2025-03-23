@@ -107,8 +107,8 @@ div.login img.login_logo_logo {
     border: #771127;
     color: #771127;
     background-color: #ECD8E0;
-    margin-top: 10px;
-    width: 30px;
+    margin-top: 5%;
+    width: 30%;
     border-radius: 7px;
     padding: 1rem;
     width: 12rem;
@@ -134,9 +134,24 @@ div.login img.login_logo_logo {
 .criar_conta{
     gap: 10px;
     display: flex;
+    margin-top:5% ;
 }
 
-.criar_conta a{
+.criar_conta p{
     color: #ECD8E0;
-    text-decoration: none;
+
+}
+
+.criar_conta button{
+    background-color: transparent;
+    color: #ECD8E0;
+    padding: 10px ;
+    border-radius: 7px;
+    border: #ECD8E0 1px solid;
+
+}
+
+.criar_conta button:hover{
+    background-color: #ECD8E0;
+    color: #771127;
 }
