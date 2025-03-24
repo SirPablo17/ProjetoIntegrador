@@ -153,6 +153,7 @@ div.login img.login_logo_logo {
 }
 .login_usuario_senhaEcadastro a{
     text-decoration: none;
+    color: #ECD8E0;
 }
 .login_usuario_senhaEcadastro a:visited{
     text-decoration: none;
@@ -165,6 +166,7 @@ div.login img.login_logo_logo {
     justify-content: center;
     align-items: center;
     font-size: 0.60em;
+    gap: 0.25rem;
    
 }
 
