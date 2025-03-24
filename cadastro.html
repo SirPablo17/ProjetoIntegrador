@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -24,6 +25,39 @@
             </div>
         </nav>
     </header>
+
+    <main>
+        <div class="cadastro">
+
+            <h2> Crie já sua conta!</h2>
+            <form action="">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="digite seu nome" required>
+
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" id="nascimento" required>
+                
+                <label for="cpf">CPF:</label>
+                <input type="number" id="cpf"placeholder="000.000.000-00." required>
+
+                <label for="telefone">Telefone</label>
+                <input type="number" id="telefone" placeholder=" (xx) xxxxx-xxxx">
+                
+                <label for="email">E-mail</label>
+                <input type="email"id="email" placeholder="digite seu email" required> 
+
+                <label for="confirm_email">Confirme seu e-mail</label>
+                <input type="email"id="confirm_email" placeholder="digite seu email" required>
+
+                <label for="senha">Escolha uma senha</label>
+                <input type="text" id="senha" placeholder="digite sua senha" required>
+
+                <label for="confirm_senha">Escolha uma senha</label>
+                <input type="text" id="confirm_senha" placeholder="digite sua senha" required>
+
+            </form>
+        </div>
+    </main>
     
 </body>
 </html>
