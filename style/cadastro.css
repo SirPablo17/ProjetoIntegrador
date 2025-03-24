@@ -7,7 +7,7 @@ main {
     /* Centraliza horizontalmente */
     align-items: center;
     /* Centraliza verticalmente */
-    max-width:900px;
+    max-width:500px;
     /* Mantém a largura desejada */
     height: 500px;
     /* Mantém a altura desejada */
@@ -16,18 +16,27 @@ main {
 }
 
 .cadastro{
+    max-width: 500px ;
+    width:100% ;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: flex-start;
-    justify-ite;
     margin-top: 30vh;
     background-color: #771127;
+}
+.cadastro h2{
+    color: #ECD8E0;
+    
+
 }
 .cadastro form{
     background-color: aliceblue;
     border: 1px solid  #771127;
-    margin: ;
+    margin-top:20px !important;
+    margin:2px;
+    padding:5px;
+    gap:2px;
+    display: flex;
+    flex-direction: column;
 
 }
 
