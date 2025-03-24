@@ -55,7 +55,7 @@ div.login img.login_logo_logo {
     /* A altura se ajustará proporcionalmente */
     object-fit: contain;
     /* Mantém a proporção original */
-    margin: 0 auto 10% auto;
+    margin: 5% auto 10% auto;
     display: block;
 }
 
