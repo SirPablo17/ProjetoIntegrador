@@ -1,0 +1,36 @@
+@import url("style.css");
+
+main {
+    display: flex;
+    /* Usar flexbox para centralizar */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    max-width:900px;
+    /* Mantém a largura desejada */
+    height: 500px;
+    /* Mantém a altura desejada */
+    margin: 0 auto;
+    /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    justify-ite;
+    margin-top: 30vh;
+    background-color: #771127;
+}
+.cadastro form{
+    background-color: aliceblue;
+    border: 1px solid  #771127;
+    margin: ;
+
+}
+
+
+
+
