@@ -40,7 +40,7 @@ main {
     justify-content: center;
     flex-direction: column;
     width: 25vw;
-    height: 50vh;
+    height: 30%;
     padding: 0% 10%;
     box-shadow: 0px 19px 79px 0px rgba(119,17,39,0.24);
     box-shadow: 0px 19px 79px 0px rgba(119,17,39,0.24),0px 17px 100px 18px rgba(119,17,39,0.24);
@@ -98,6 +98,7 @@ div.login img.login_logo_logo {
     background-color: transparent;
     outline: #ECD8E0 solid 2px;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 .login_botoes {
@@ -114,7 +115,8 @@ div.login img.login_logo_logo {
     margin-top: 5%;
     width: 30%;
     border-radius: 7px;
-    padding: 0.75rem;
+    padding: 1rem;
+    margin: 5em;
     width: 10rem;
     font-size: 1.1em;
 }
@@ -135,27 +137,51 @@ div.login img.login_logo_logo {
     justify-content: center;
     align-items: center;
     height: 8vh;
-}
 
-.criar_conta{
-    margin-top:5%;
+}
+.login_usuario_senhaEcadastro {
+    text-decoration: none;
+    appearance: none;
     display: flex;
-   /* justify-content: end;*/
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    font-size: 1.1em; 
+    text-decoration: none;
+    appearance: none;
+    color: #ECD8E0;
+}
+.login_usuario_senhaEcadastro a{
+    text-decoration: none;
+}
+.login_usuario_senhaEcadastro a:visited{
+    text-decoration: none;
+    appearance: none;
+    color: #ECD8E0;
+}
+.criar_conta{
+    display: flex;
+    padding: 1rem 0 1rem 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.60em;
+   
 }
 
 .criar_conta p{
     color: #ECD8E0;
-    margin:10px;
+    margin-right: 0.5rem;
 }
 
 .criar_conta a{
+    display: flex;
     background-color: transparent;
     color: #ECD8E0;
     text-decoration: none;
     padding: 10px;
     border-radius: 7px;
     border: #ECD8E0 1px solid;
-
+    ;
 }
 
 .criar_conta a:hover{
