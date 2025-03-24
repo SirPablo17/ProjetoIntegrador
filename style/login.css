@@ -80,6 +80,10 @@ div.login img.login_logo_logo {
     color: #ECD8E0;
 }
 
+.login_usuario_forms a:hover {
+    text-decoration:underline;
+}
+
 
 .forms input {
     border: none;
@@ -107,7 +111,7 @@ div.login img.login_logo_logo {
     border: #771127;
     color: #771127;
     background-color: #ECD8E0;
-    margin-top: 10%;
+    margin-top: 5%;
     width: 30%;
     border-radius: 7px;
     padding: 0.75rem;
@@ -131,4 +135,30 @@ div.login img.login_logo_logo {
     justify-content: center;
     align-items: center;
     height: 8vh;
+}
+
+.criar_conta{
+    margin-top:5%;
+    display: flex;
+   /* justify-content: end;*/
+}
+
+.criar_conta p{
+    color: #ECD8E0;
+    margin:10px;
+}
+
+.criar_conta a{
+    background-color: transparent;
+    color: #ECD8E0;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 7px;
+    border: #ECD8E0 1px solid;
+
+}
+
+.criar_conta a:hover{
+    background-color: #ECD8E0;
+    color: #771127;
 }
