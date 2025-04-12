@@ -10,7 +10,7 @@ main {
     /* Centraliza verticalmente */
     max-width:500px;
     /* Mantém a largura desejada */
-    height: 500px;
+    height: 1000px;
     /* Mantém a altura desejada */
     margin: 0 auto;
     /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
@@ -44,10 +44,52 @@ main {
     color: #ECD8E0;
     justify-content: center;
 }
-
+input::placeholder {
+    color: #ECD8E0;
+  }
 .cadastro_form input{
     margin: 2% 0;
+    background-color: #771127;
+    color: #ECD8E0;
+    
+}
+
+.login_botoes {
+    display: flex;
+}
+
+.botao_acao {
+    background-color: transparent;
+    border-width: 10px;
+    text-decoration: none;
+    border: #771127;
+    color: #771127;
+    background-color: #ECD8E0;
+    margin-top: 5%;
+    width: 30%;
+    border-radius: 7px;
+    padding: 1rem;
+    margin: 5em;
+    width: 10rem;
+    font-size: 0.9em;
+}
+
+.botao_acao:hover {
+
+    cursor: pointer;
+    background-color: #771127;
+    color: #ECD8E0;
+    transition: 0.7s;
+    border: #ECD8E0 1px solid;
 }
 
 
+.centralizar_botao {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+
+}
 
