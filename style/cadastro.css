@@ -10,7 +10,7 @@ main {
     /* Centraliza verticalmente */
     max-width:500px;
     /* Mantém a largura desejada */
-    height: 1000px;
+    height: 1100px;
     /* Mantém a altura desejada */
     margin: 0 auto;
     /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
