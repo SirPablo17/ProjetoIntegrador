@@ -1,8 +1,12 @@
 @import url("style.css");
 
+.login-button{
+    visibility: hidden;
+}
+
+
 body {
     background-color: var(--cor-primaria);
-
 }
 
 main {
@@ -158,7 +162,7 @@ div.login img.login_logo_logo {
 .login_usuario_senhaEcadastro a:visited{
     text-decoration: none;
     appearance: none;
-    color: #ECD8E0;
+    color: #771127;
 }
 .criar_conta{
     display: flex;
@@ -170,23 +174,21 @@ div.login img.login_logo_logo {
    
 }
 
-.criar_conta p{
-    color: #ECD8E0;
+.criar_conta a {
     margin-right: 0.5rem;
-}
-
-.criar_conta a{
+    background-color: #ECD8E0;
     display: flex;
-    background-color: transparent;
-    color: #ECD8E0;
     text-decoration: none;
     padding: 10px;
     border-radius: 7px;
     border: #ECD8E0 1px solid;
-    ;
 }
 
 .criar_conta a:hover{
-    background-color: #ECD8E0;
-    color: #771127;
+    cursor: pointer;
+    background-color: #771127;
+    color: #ECD8E0;
+    transition: 0.7s;
+    border: #ECD8E0 1px solid;
 }
+

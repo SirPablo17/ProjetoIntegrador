@@ -1,5 +1,6 @@
 @import url("style.css");
 
+
 main {
     display: flex;
     /* Usar flexbox para centralizar */
@@ -14,6 +15,8 @@ main {
     margin: 0 auto;
     /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
 }
+
+
 
 .cadastro{
     max-width: 50rem ;

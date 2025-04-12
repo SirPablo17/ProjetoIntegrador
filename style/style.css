@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
 /* ESTILO GERAL */
 :root {
     --cor-primaria:#ECD8E0;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +14,7 @@
 }
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 .container {
@@ -194,7 +194,6 @@ section #topoDoSite {
 /* Especialidades  Ajuste*/
 
 #especialidades .flex {
-
   gap: 30px;
   align-items: center;
   justify-content: center;
@@ -245,6 +244,52 @@ section #topoDoSite {
 }
 
 
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.login_logo_position:last-child{
+    margin: 0 auto;
+}
+
+#sobreMim h2{
+    color: #771127;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+#sobreMim {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudoSobreMim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.conteudoSobreMim p {
+    max-width: 600px;
+    font-size: 30px;
+    color: #771127;
+}
+
+
 /* Ajustando para Mobile*/
 @media (max-width: 999px) {
     body {
@@ -290,20 +335,4 @@ section #topoDoSite {
         opacity: 1s;
         transform: translateX(0);
     }
-}
-
-.mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu.active .line2 {
-    opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
-}
-
-.login_logo_position:last-child{
-    margin: 0 auto;
 }
