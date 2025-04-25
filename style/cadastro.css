@@ -1,6 +1,5 @@
 @import url("style.css");
 
-
 main {
     display: flex;
     /* Usar flexbox para centralizar */
@@ -15,8 +14,6 @@ main {
     margin: 0 auto;
     /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
 }
-
-
 
 .cadastro{
     max-width: 50rem ;
@@ -44,14 +41,15 @@ main {
     color: #ECD8E0;
     justify-content: center;
 }
+
 input::placeholder {
     color: #ECD8E0;
-  }
+}
+
 .cadastro_form input{
     margin: 2% 0;
     background-color: #771127;
-    color: #ECD8E0;
-    
+    color: #ECD8E0;  
 }
 
 .login_botoes {
@@ -90,6 +88,5 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     height: 8vh;
-
 }
 
