@@ -1,11 +1,23 @@
+
+<?php 
+session_start();
+
+
+if(isset($_SESSION['mensagem de erro'])){
+    echo"<p class='error-message'>". $_SESSION['mensagem_erro']."</p>";
+    unset($_SESSION['mensagem_erro']);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/login.css">
-    <link rel="stylesheet" href="./style/global.css">
-    <link rel="stylesheet" href="./style/header.css">
     <title>Login</title>
 </head>
 <body>
@@ -36,9 +48,9 @@
                 <div class="login_usuario_forms">
                     <form action="PHP/processa.php" method="post">
                         <label for="email"> E-mail</label>
-                        <input type="text" id ="email">
+                        <input type="text" id ="email" name="email">
                         <label for="senha"> Senha</label>
-                        <input type="password" id ="senha">
+                        <input type="password" id ="senha" name="email">
                     </form>
                 </div>
                 <div class="login_usuario_senhaEcadastro">
@@ -58,5 +70,7 @@
             </form>
         </div>
     </main>
+
+   
 </body>
 </html>
