@@ -32,10 +32,12 @@
                     <img class="login_logo_logo" src="img/LogoPNG.png">
                 </div>
                 <div class="login_usuario_forms">
-                    <label for="email"> E-mail</label>
-                    <input type="text">
-                    <label for="email"> Senha</label>
-                    <input type="password">
+                    <form action="PHP/processa.php" method="post">
+                        <label for="email"> E-mail</label>
+                        <input type="text" id ="email">
+                        <label for="senha"> Senha</label>
+                        <input type="password" id ="senha">
+                    </form>
                 </div>
                 <div class="login_usuario_senhaEcadastro">
                     <a href="https://support.google.com/accounts/answer/7682439?hl=pt-BR">Esqueci a senha</a>
