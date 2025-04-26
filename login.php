@@ -31,12 +31,7 @@
     <main >
         <body>
             <h2>Login do ADMINISTRADOR</h2>
-
-            <?php if (isset($_GET['erro'])): ?>
-            <p style="color: red;">Usuário ou senha inválidos. Tente novamente.</p>
-            <?php endif; ?>
-
-                    <form action="processa_login.php" method="post">                    
+                    <form action="./PHP/processa_login.php" method="post">                    
                     <label for="nome">Nome:</label>
                     <input type="text" id="email" name = "email" required>
     
@@ -49,8 +44,11 @@
     
                     <input type="submit" Value="Entrar">
                 </form>    
-    </main>
 
-    <script src="./PHP/processa_login.php"></script>
+
+            <?php if (isset($_GET['erro'])): ?>
+            <p style="color: red;">Usuário ou senha inválidos. Tente novamente.</p>
+            <?php endif; ?>
+    </main>
 </body>
 </html>
