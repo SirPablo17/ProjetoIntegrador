@@ -1,4 +1,3 @@
-@import url("style.css");
 
 .login-button{
     visibility: hidden;
@@ -11,19 +10,11 @@ body {
 
 main {
     display: flex;
-    /* Usar flexbox para centralizar */
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
     width: 500px;
-    /* Mantém a largura desejada */
     height: 500px;
-    /* Mantém a altura desejada */
-    margin: 0 auto;
-    /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/
-    
-    
+    margin: 0 auto;    
 }
 
 .login {
@@ -33,8 +24,6 @@ main {
     margin-top: 30vh;
 
 }
-
-
 
 
 .forms {
@@ -67,8 +56,7 @@ div.login img.login_logo_logo {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    gap: 10px;
+    gap: 1rem;
     color: #ECD8E0;
 }
 
