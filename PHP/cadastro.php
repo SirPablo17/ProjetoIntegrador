@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/cadastro.css">
+    <link rel="stylesheet" href="../style/cadastro.css">
+    <link rel="stylesheet" href="../style/global.css">
     <title>Cadastro</title>
 </head>
 <body>
     <header>
         <nav>
-            <a class="logo"> <img src="img/LogoPNG.png" height="71"></a>
+            <a class="logo"> <img src="../img/LogoPNG.png" height="71"></a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -21,7 +22,7 @@
                 <li><a href="index.html">Sobre Mim</a></li>
             </ul>
             <div class="login-button">
-                <button onclick="location.href='login.html'">Entrar</button>
+                <button onclick="location.href='login.php'">Entrar</button>
             </div>
         </nav>
     </header>
