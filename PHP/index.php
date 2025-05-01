@@ -8,8 +8,8 @@
     <title>Daiane Carvalho</title>
     <link rel="icon" href="img/LogoPNG.png" type="image/x-icon">
         <!-- CSS -->
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/global.css">
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -20,7 +20,7 @@
     <div class="container">
         <header>
             <nav>
-                <a class="logo"> <img src="img/LogoPNG.png" height="75"></a>
+                <a class="logo"> <img src="../img/LogoPNG.png" height="75"></a>
                 <div class="mobile-menu">
                     <div class="line1"></div>
                     <div class="line2"></div>
@@ -32,7 +32,7 @@
                     <li><a href="#sobreMim">Sobre Mim</a></li>
                 </ul>
                 <div class="login-button">
-                   <a href="./login.php">Entrar</a>
+                   <a href="login.php">Entrar</a>
                 </div>
             </nav>
         </header>
@@ -49,7 +49,7 @@
                                 realizados com cuidado, profissionalismo e atenção aos detalhes.</p>
                         </div>
                         <div class="imgTopoSite">
-                            <img src="img/LogoPNG.png" height="300">
+                            <img src="../img/LogoPNG.png" height="300">
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                                 voluptas odio similique ipsum vitae? Tenetur laboriosam aliquid sit deleniti commodi?
                                 Neque
                                 in quos sapiente necessitatibus assumenda dolore aut.</p>
-                        <div> <img src="img/LogoPNG.png" height="300"></div>
+                        <div> <img src="../img/LogoPNG.png" height="300"></div>
                     </div>
 
                 </div>

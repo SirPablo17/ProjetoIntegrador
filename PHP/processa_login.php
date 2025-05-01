@@ -1,23 +1,39 @@
 <?php
 session_start();
 
-require_once('conexao.php'); // <- adicione aspas
+try {
+    require_once('conexao.php');
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-$sql= "SELECT * FROM tblUsuario WHERE Email = :email AND Senha = :senha";   
+    $sql = "SELECT * FROM tblUsuario WHERE email_usuario = :email AND senha_usuario = :senha";
 
-$query = $conn->prepare($sql); // <- troque $pdo para $conn
-$query->bindParam(':email',$email, PDO::PARAM_STR);
-$query->bindParam(':senha',$senha, PDO::PARAM_STR);
+    $query = $conn->prepare($sql);
+    $query->bindParam(':email', $email, PDO::PARAM_STR);
+    $query->bindParam(':senha', $senha, PDO::PARAM_STR);
 
-$query->execute();
+    if ($query->execute()) {
+        //echo "<p>Consulta executada com sucesso.</p>";
+        $resultados = $query->fetchAll(PDO::FETCH_ASSOC);
+        // echo "<pre>"; print_r($resultados); echo "</pre>";
 
-if ($query->rowCount()>0) {
-    $_SESSION['admin_logado'] = true;
-    header('Location: painelUsuario.html');
-} else {
-    header('Location: login.html?erro');
+        if ($query->rowCount() > 0) {
+            //echo "<p>Usuário encontrado. Redirecionando...</p>";
+            $_SESSION['admin_logado'] = true;
+            header('Location: painelUsuario.php');
+            exit;
+        } else {
+            $_SESSION['mensagem_erro'] = "Nome de usuário ou senha incorreto";
+            header('Location:login.php?erro');
+            exit;
+        }
+    } else {
+        echo "<p>Erro na execução da query:</p>";
+        print_r($query->errorInfo());
+    }
+
+} catch (Exception $e) {
+    echo "<p>Erro de conexão: " . $e->getMessage() . "</p>";
 }
 ?>
