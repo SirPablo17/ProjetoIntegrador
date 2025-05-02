@@ -17,9 +17,9 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html">Serviços</a></li>
-                <li><a href="index.html">Sobre Mim</a></li>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="index.php">Serviços</a></li>
+                <li><a href="index.php">Sobre Mim</a></li>
             </ul>
             <div class="login-button">
                 <button onclick="location.href='login.php'">Entrar</button>
