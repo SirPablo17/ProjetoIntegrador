@@ -50,19 +50,19 @@ nav {
 }
 
 
-.login-button button {
+.login-button a{
     border: none;
     background-color: #ECD8E0;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.login-button button:hover {
-
+.login-button a:hover {
     opacity: 0.5;
     transition: 1s;
-
+    text-decoration: none;
 }
 
 main {
@@ -97,7 +97,7 @@ main {
 
 #topoDoSite {
 
-   padding-top: 150px;
+    padding-top: 150px;
 
 }
 
@@ -115,13 +115,13 @@ section #topoDoSite {
 
 #topoDoSite h1 {
 
- 
+
     color: #771127;
     font-size: 42px;
     line-height: 40px;
 }
 
-#topoDoSite .txtTopoSite p{
+#topoDoSite .txtTopoSite p {
 
 
     font-size: 18px;
@@ -129,6 +129,7 @@ section #topoDoSite {
     margin: 25px 0;
 
 }
+
 #topoDoSite .imgTopoSite img {
 
     position: relative;
@@ -141,20 +142,21 @@ section #topoDoSite {
     0% {
         top: 0;
     }
+
     100% {
         top: 30px;
     }
-    
+
 }
 
 
 /* Especialidades  Ajuste*/
 
 #especialidades .flex {
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #especialidades .interface h2 {
@@ -188,13 +190,13 @@ section #topoDoSite {
 }
 
 #especialidades .especialidadesBox i {
-    
+
     font-size: 70px;
 
 }
 
 #especialidades .especialidadesBox h3 {
-    
+
     font-size: 28px;
     margin: 15px 0;
 
@@ -213,11 +215,11 @@ section #topoDoSite {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-.login_logo_position:last-child{
+.login_logo_position:last-child {
     margin: 0 auto;
 }
 
-#sobreMim h2{
+#sobreMim h2 {
     color: #771127;
     display: flex;
     justify-content: center;

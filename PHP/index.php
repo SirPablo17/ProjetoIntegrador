@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daiane Carvalho</title>
-    <link rel="icon" href="img/LogoPNG.png" type="image/x-icon">
+    <link rel="icon" href="../img/LogoPNG.png" type="image/x-icon">
         <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/global.css">
@@ -32,7 +32,7 @@
                     <li><a href="#sobreMim">Sobre Mim</a></li>
                 </ul>
                 <div class="login-button">
-                   <a href="login.php">Entrar</a>
+                    <a href="login.php" class="button-link">Entrar</a>
                 </div>
             </nav>
         </header>
