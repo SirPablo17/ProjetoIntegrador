@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../style/global.css">
     <title>Cadastro</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,54 +24,58 @@
                 <li><a href="index.php">Sobre Mim</a></li>
             </ul>
             <div class="login-button">
-                <button onclick="location.href='login.php'">Entrar</button>
+                    <a href="login.php" class="button-link">Entrar</a>
             </div>
         </nav>
     </header>
 
     <main>
         <div class="cadastro">
-           
 
-                <h2> Crie já sua conta!</h2>
-                <form action="" class="cadastro_form">
-                    <label for="nome">Nome completo:</label>
-                    <input type="text" id="nome" placeholder="digite seu nome" required>
-                    
-                    <label for="nascimento">Data de nascimento:</label>
-                    <input type="date" id="nascimento" required>
-                    
-                    <label for="cpf">CPF:</label>
-                    <input type="number" id="cpf"placeholder="000.000.000-00." required>
-                    
-                    <label for="telefone">Telefone</label>
-                    <input type="number" id="telefone" placeholder=" (xx) xxxxx-xxxx">
-                    
-                    <label for="cep">CEP</label>
-                    <input type="number" id="cep" placeholder=" 00000-000">
-                    
-                    <label for="email">E-mail</label>
-                    <input type="email"id="email" placeholder="digite seu email" required> 
-                    
-                    <label for="confirm_email">Confirme seu e-mail</label>
-                    <input type="email"id="confirm_email" placeholder="digite seu email" required>
-                    
-                    <label for="senha">Escolha uma senha</label>
-                    <input type="password" id="senha" placeholder="digite sua senha" required>
-                    
-                    <label for="confirm_senha">Confirme sua senha</label>
-                    <input type="password" id="confirm_senha" placeholder="digite sua senha" required>
-                    
-                    <div class="centralizar_botao">
-                        <button class="botao_acao">
-                            <submit onclick="Logarconta()">Entrar</submit>
-                        </button>    
-                    </div>   
-                    
-                </form>
-            
+
+            <h2> Crie já sua conta!</h2>
+            <form action="../conexao-php/processa_cadastro.php" method="POST" class="cadastro_form">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="digite seu nome" name="nomeCompleto" required>
+
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" id="nascimento" name="dataNascimento" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" name="cpfUsuario" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefoneUsuario" placeholder="(xx) xxxxx-xxxx">
+
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cepUsuario" placeholder="00000-000">
+
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="enderecoUsuario">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="emailUsuario" placeholder="digite seu email" required>
+
+                <label for="confirm_email">Confirme seu e-mail</label>
+                <input type="email" id="confirm_email" name="confirmEmailUsuario" placeholder="confirme seu email"
+                    required>
+
+                <label for="senha">Escolha uma senha</label>
+                <input type="password" id="senha" name="usuarioSenha" placeholder="digite sua senha" required>
+
+                <label for="confirm_senha">Confirme sua senha</label>
+                <input type="password" id="confirm_senha" name="confirmUsuarioSenha" placeholder="confirme sua senha"
+                    required>
+
+                <div class="centralizar_botao">
+                    <button type="submit" class="botao_acao">Cadastrar</button>
+                </div>
+            </form>
+
+
         </div>
     </main>
-    
+
 </body>
+
 </html>

@@ -7,7 +7,7 @@ try {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM tblUsuario WHERE email_usuario = :email AND senha_usuario = :senha";
+    $sql = "SELECT * FROM tblUsuario WHERE emailUsuario = :email AND senhaUsuario = :senha AND UsuarioAtivoInativo = 1";
 
     $query = $conn->prepare($sql);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
@@ -21,7 +21,7 @@ try {
         if ($query->rowCount() > 0) {
             //echo "<p>Usuário encontrado. Redirecionando...</p>";
             $_SESSION['admin_logado'] = true;
-            header('Location: painelUsuario.php');
+            header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelUsuario.php');
             exit;
         } else {
             $_SESSION['mensagem_erro'] = "Nome de usuário ou senha incorreto";

@@ -33,13 +33,13 @@ if(isset($_SESSION['mensagem de erro'])){
                 <li><a href="index.php">Sobre Mim</a></li>
             </ul>
             <div class="login-button">
-                <button onclick="location.href='login.html'">Entrar</button>
+                    <a href="login.php" class="button-link">Entrar</a>
             </div>
         </nav>
     </header>
     <main >
         <div class="login">
-            <form id="login_usuario" class="forms" action="processa_login.php" method="POST"> <!-- id para jogar pro php-->
+            <form id="login_usuario" class="forms" action="../conexao-php/processa_login.php" method="POST"> <!-- id para jogar pro php-->
                 <div class="login_logo_position">
                     <img class="login_logo_logo" src="../img/LogoPNG.png">
                 </div>
