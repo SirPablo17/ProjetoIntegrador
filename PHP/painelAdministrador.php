@@ -7,8 +7,6 @@ if(!isset($_SESSION['admin_logado'])){
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,7 +22,7 @@ if(!isset($_SESSION['admin_logado'])){
 </header>
 
 <main class="painel-admin">
-    <h2>Seja Bem-Vindo, <?php echo htmlspecialchars($_SESSION['admin_nome']); ?></h2>
+    <h2>Seja Bem-Vindo, <?php echo htmlspecialchars($_SESSION['admin_nome']);?></h2>
 
     <div class="botoes-painel">
         <a href="#" class="botao-acao">Cadastrar Usuário</a>

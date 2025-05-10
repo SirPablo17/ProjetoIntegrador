@@ -26,7 +26,7 @@ if(!isset($_SESSION['admin_logado'])){
 
     <div class="botoes-painel">
         <a href="#" class="botao-acao">Marcar consulta</a>
-        <a href="listarUsuarios.php" class="botao-acao">Confirmar consulta</a>
+        <a href="#" class="botao-acao">Confirmar consulta</a>
         <a href="logout.php" class="botao-acao sair">Sair</a> 
     </div>
 </main>
