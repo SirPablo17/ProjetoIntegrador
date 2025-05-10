@@ -14,6 +14,7 @@ if(!isset($_SESSION['admin_logado'])){
     <title>Painel do Administrador</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style/painelAdminstrador.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="../style/global.css">
 </head>
 <body>
 
