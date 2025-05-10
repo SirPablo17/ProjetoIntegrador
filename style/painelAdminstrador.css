@@ -1,0 +1,91 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #771127;
+    padding: 1.5rem;
+    text-align: center;
+    color: #ECD8E0;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Painel */
+.painel-admin {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.painel-admin h2 {
+    color: #771127;
+    margin-bottom: 2rem;
+}
+
+/* Botões */
+.botoes-painel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.botao-acao {
+    text-decoration: none;
+    background-color: #ECD8E0;
+    color: #771127;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #771127;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.botao-acao:hover {
+    background-color: #771127;
+    color: #ECD8E0;
+}
+
+/* Botão de sair com destaque */
+.botao-acao.sair {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
+
+.botao-acao.sair:hover {
+    background-color: #721c24;
+    color: #f8d7da;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .botoes-painel {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botao-acao {
+        width: 100%;
+    }
+}

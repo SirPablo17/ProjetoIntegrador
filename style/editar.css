@@ -1,0 +1,129 @@
+@import url("style.css");
+
+body {
+    margin-top: 3rem;
+}
+
+/* Título centralizado */
+.h1-title h1 {
+    text-align: center;
+    color: #ECD8E0;
+    margin-bottom: 2rem;
+}
+
+/* Container do formulário */
+.editar {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #771127;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* Formulário com grid (2 colunas: label e input) */
+.editar_form {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem 1.5rem;
+    align-items: center;
+}
+
+/* Labels */
+.editar_form label {
+    font-weight: 600;
+    color: #ECD8E0;
+    text-align: right;
+}
+
+/* Inputs e selects */
+.editar_form input,
+.editar_form select {
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+}
+
+/* Foco bonito */
+.editar_form input:focus,
+.editar_form select:focus {
+    border-color: #771127;
+    box-shadow: 0 0 5px rgba(119, 17, 39, 0.4);
+    outline: none;
+}
+
+/* Checkbox tratado diferente */
+.editar_form label[for="usuarioAtivoInativo"] {
+    grid-column: 1 / 2;
+    text-align: right;
+}
+
+.editar_form input[type="checkbox"] {
+    width: auto;
+
+}
+
+/* Centralizar botão */
+.centralizar_botao {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Botão ação */
+
+.botao_acao {
+    background-color: transparent;
+    color: #771127;
+    border-width: 10px;
+    border: none;
+    background-color: #ECD8E0;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.botao_acao:hover {
+    cursor: pointer;
+    background-color: #771127;
+    color: #ECD8E0;
+    transition: 0.7s;
+    border: #ECD8E0 1px solid;
+}
+
+/* Link voltar */
+.editar a {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: #ECD8E0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.editar a:hover {
+    color: #a31c3b;
+}
+
+/* Responsivo — quando a tela for pequena, volta empilhado */
+@media (max-width: 600px) {
+    .editar_form {
+        grid-template-columns: 1fr;
+    }
+
+    .editar_form label {
+        text-align: left;
+    }
+
+    .centralizar_botao {
+        grid-column: auto;
+    }
+}

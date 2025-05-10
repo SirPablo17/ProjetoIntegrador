@@ -7,54 +7,42 @@ try {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $sqlAdm = "SELECT * FROM tblUsuario WHERE emailUsuario = :email AND senhaUsuario = :senha AND UsuarioAtivoInativo = 1 AND roleUsuario = 'adm'";
-    $sqlCliente = "SELECT * FROM tblUsuario WHERE emailUsuario = :email AND senhaUsuario = :senha AND UsuarioAtivoInativo = 1 AND roleUsuario = 'cliente'";
-
-    $query = $conn->prepare($sqlAdm);
+    // Busca UM usuário (seja adm ou cliente)
+    $sql = "SELECT * FROM tblUsuario WHERE emailUsuario = :email AND senhaUsuario = :senha AND UsuarioAtivoInativo = 1";
+    $query = $conn->prepare($sql);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':senha', $senha, PDO::PARAM_STR);
-    
-    $queryCliente = $conn->prepare($sqlCliente);
-    $queryCliente->bindParam(':email', $email, PDO::PARAM_STR);
-    $queryCliente->bindParam(':senha', $senha, PDO::PARAM_STR);
 
-    if ($query->execute()) {
-        //echo "<p>Consulta executada com sucesso.</p>";
-        $resultados = $query->fetchAll(PDO::FETCH_ASSOC);
-        // echo "<pre>"; print_r($resultados); echo "</pre>";
+    $query->execute();
+    $usuario = $query->fetch(PDO::FETCH_ASSOC);
 
-        if ($query->rowCount() > 0 && $query == true) {
-            //echo "<p>Usuário encontrado. Redirecionando...</p>";
+    if ($usuario) {
+        // Se encontrou o usuário, agora verificamos o papel (role)
+        if ($usuario['roleUsuario'] == 'adm') {
             $_SESSION['admin_logado'] = true;
-            header('Location: /Projeto-PI---TSI---2--semestre--main/PHP/painelUsuario.php');
+            $_SESSION['admin_id'] = $usuario['usuarioID'];
+            $_SESSION['admin_nome'] = $usuario['nome'];
+
+            header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelAdministrador.php');
+            exit;
+        } elseif ($usuario['roleUsuario'] == 'cliente') {
+            $_SESSION['cliente_logado'] = true;
+            $_SESSION['cliente_id'] = $usuario['usuarioID'];
+            $_SESSION['cliente_nome'] = $usuario['nome'];
+
+            header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelCliente.php');
+            exit;
+        } else {
+            $_SESSION['mensagem_erro'] = "Usuário sem permissão";
+            echo 'Usuário sem permissão';
+            header('Location: /Projeto-PI---TSI---2--semestre-n/PHP/login.php?erro');
             exit;
         }
-        elseif ($queryCliente->execute()) {
-            //echo "<p>Consulta executada com sucesso.</p>";
-            $resultados = $queryCliente->fetchAll(PDO::FETCH_ASSOC);
-            // echo "<pre>"; print_r($resultados); echo "</pre>";
-    
-            if ($queryCliente->rowCount() > 0) {
-                //echo "<p>Usuário encontrado. Redirecionando...</p>";
-                $_SESSION['admin_logado'] = true;
-                header('Location: /Projeto-PI---TSI---2--semestre--main/PHP/painelCliente.php');
-                exit;
-            }
-            else {
-                $_SESSION['mensagem_erro'] = "Usuário sem permissão";
-                header('Location: /Projeto-PI---TSI---2--semestre--main/PHP/login.php?erro');
-                exit;
-            }
-        }
-        else {
-            $_SESSION['mensagem_erro'] = "Nome de usuário ou senha incorreto";
-            header('Location: /Projeto-PI---TSI---2--semestre--main/PHP/login.php?erro');
-            exit;
-        }
-    }
-    else {
-        echo "<p>Erro na execução da query:</p>";
-        print_r($query->errorInfo());
+
+    } else {
+        $_SESSION['mensagem_erro'] = "Nome de usuário ou senha incorreto";
+        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/login.php?erro');
+        exit;
     }
 
 } catch (Exception $e) {

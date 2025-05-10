@@ -1,95 +1,111 @@
 @import url("style.css");
 
-
+/* Centralização do main */
 main {
     display: flex;
-    /* Usar flexbox para centralizar */
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
-    max-width:500px;
-    /* Mantém a largura desejada */
-    height: 1100px;
-    /* Mantém a altura desejada */
-    margin: 0 auto;
-    /* Centraliza horizontalmente se o main não ocupar 100% da largura do pai*/   
+    padding: 2rem;
+    min-height: 100vh;
 }
 
-
-
-.cadastro{
-    max-width: 50rem ;
-    width:100% ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+/* Container do formulário */
+.cadastro {
+    max-width: 600px;
+    width: 100%;
     background-color: #771127;
-    border-radius: 30px;
-    padding: 1.5rem;
-}
-.cadastro h2{
-    color: #ECD8E0;
-    
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 2rem 2.5rem;
+    margin-top: 5rem;
 }
 
-.cadastro_form{
-   
-    margin-top:20px !important;
-    margin:0.5em;
-    gap:2px;
-    display: flex;
-    flex-direction: column;
+/* Título */
+.cadastro h2 {
     color: #ECD8E0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Formulário */
+.cadastro_form {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem 1.5rem;
+    align-items: center;
+    color: #ECD8E0;
+}
+
+/* Labels */
+.cadastro_form label {
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Inputs */
+.cadastro_form input {
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+/* Placeholder suave */
+.cadastro_form input::placeholder {
+    color: #999;
+}
+
+/* Foco bonito */
+.cadastro_form input:focus {
+    border-color: #771127;
+    box-shadow: 0 0 4px rgba(119, 17, 39, 0.3);
+    outline: none;
+}
+
+/* Centralizar botão */
+.centralizar_botao {
+    grid-column: 1 / -1;
+    display: flex;
     justify-content: center;
-}
-input::placeholder {
-    color: #ECD8E0;
-  }
-.cadastro_form input{
-    margin: 2% 0;
-    background-color: #771127;
-    color: #ECD8E0;
-    
+    margin-top: 1rem;
 }
 
-.login_botoes {
-    display: flex;
-}
-
+/* Botão ação */
 .botao_acao {
-    background-color: transparent;
-    border-width: 10px;
-    text-decoration: none;
-    border: #771127;
-    color: #771127;
     background-color: #ECD8E0;
-    margin-top: 5%;
-    width: 30%;
-    border-radius: 7px;
-    padding: 1rem;
-    margin: 5em;
-    width: 10rem;
-    font-size: 0.9em;
+    color: #771127;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .botao_acao:hover {
-
     cursor: pointer;
     background-color: #771127;
     color: #ECD8E0;
     transition: 0.7s;
-    border: #ECD8E0 1px solid;
+    border: 1px solid #ECD8E0;
 }
 
+/* Responsivo */
+@media (max-width: 600px) {
+    .cadastro_form {
+        grid-template-columns: 1fr;
+    }
 
-.centralizar_botao {
+    .cadastro_form label {
+        text-align: left;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8vh;
-
+    .centralizar_botao {
+        grid-column: auto;
+    }
 }
-

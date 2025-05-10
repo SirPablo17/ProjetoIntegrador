@@ -1,0 +1,130 @@
+
+
+body {
+    padding: 2rem;
+    color: #333;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #771127;
+    margin-bottom: 1.5rem;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da tabela */
+table th {
+    background-color: #771127;
+    color: #ECD8E0;
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+/* Células da tabela */
+table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Linhas alternadas */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Última linha não ter borda */
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botões de ação */
+.action-btn {
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    background-color: #ECD8E0;
+    color: #771127;
+    border: 1px solid #771127;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover dos botões */
+.action-btn:hover {
+    background-color: #771127;
+    color: #ECD8E0;
+}
+
+/* Botão de exclusão (destaque leve) */
+.delete-btn {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
+
+.delete-btn:hover {
+    background-color: #721c24;
+    color: #f8d7da;
+}
+
+/* Link de voltar */
+a[href*="painelAdministrador.php"] {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: #771127;
+    font-weight: 600;
+}
+
+a[href*="painelAdministrador.php"]:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    table tr {
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ccc;
+    }
+
+    table th {
+        display: none;
+    }
+
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-left: 0;
+        text-align: left;
+        font-weight: bold;
+        color: #771127;
+    }
+
+    .action-btn {
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+}

@@ -62,9 +62,7 @@ if(isset($_SESSION['mensagem de erro'])){
                     </div>
                 </div>
                 <div class="centralizar_botao">
-                    <button class="botao_acao">
-                        <submit onclick="Logarconta()">Entrar</submit>
-                    </button>    
+                    <button type="submit" class="botao_acao">Entrar</button>  
                 </div>
             </form>
         </div>
