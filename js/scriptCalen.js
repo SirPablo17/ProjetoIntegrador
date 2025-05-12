@@ -21,6 +21,8 @@ let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+let consultasCarregadas = false;
+
 
 const months = [
   "Janeiro",
@@ -64,9 +66,11 @@ const daysOfWeek = [
 //   },
 // ];
 
-const eventsArr = [];
+
+
+let eventsArr = [];
 getEvents();
-console.log(eventsArr);
+
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
 function initCalendar() {
@@ -448,11 +452,14 @@ function saveEvents() {
 
 //function to get events from local storage
 function getEvents() {
-  //check if events are already saved in local storage then return event else nothing
   if (localStorage.getItem("events") === null) {
     return;
   }
   eventsArr.push(...JSON.parse(localStorage.getItem("events")));
+}
+
+function saveEvents() {
+  localStorage.setItem("events", JSON.stringify(eventsArr));
 }
 
 function convertTime(time) {
@@ -467,8 +474,59 @@ function convertTime(time) {
 }
 
 
+function getEvents() {
+  const storedEvents = localStorage.getItem("events");
+  if (storedEvents) {
+    eventsArr = JSON.parse(storedEvents);
+  }
+}
+
+function saveEvents() {
+  localStorage.setItem("events", JSON.stringify(eventsArr));
+}
+
+// Salvar eventos no localStorage
+function saveEvents() {
+  localStorage.setItem("events", JSON.stringify(eventsArr));
+}
+
+// Adicionar eventos na tabela SEM DUPLICAR
+function addEvents(events) {
+  const tableBody = document.getElementById("event-table-body");
+  tableBody.innerHTML = ""; // LIMPA
+
+  events.forEach((event) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${event.name}</td>
+      <td>${event.date}</td>
+      <td>${event.description}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+
 function carregarConsultasDoBanco() {
-  fetch('/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php')
+  // Só carrega do banco SE não tiver nada no localStorage
+  const storedEvents = localStorage.getItem("events");
+  if (storedEvents && JSON.parse(storedEvents).length > 0) {
+    // Já temos dados no localStorage — carrega isso
+    eventsArr = JSON.parse(storedEvents);
+    initCalendar();
+    return;
+  }
+
+  // Verifica se o userId está disponível (do lado do cliente)
+  const userId = getUserIdFromSession(); // Função para obter o userId da sessão ou de um local específico
+
+  if (!userId) {
+    console.error("Usuário não logado");
+    return;
+  }
+
+  // Se não tiver no localStorage, busca do banco
+  fetch(`/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php?user_id=${userId}`)
     .then(response => response.json())
     .then(data => {
       if (data.error) {
@@ -476,30 +534,24 @@ function carregarConsultasDoBanco() {
         return;
       }
 
-      // Adiciona as consultas no eventsArr
-      data.forEach(event => {
-        // Verifica se já existe um evento no mesmo dia
-        let existe = false;
-        eventsArr.forEach(existingEvent => {
-          if (
-            existingEvent.day === event.day &&
-            existingEvent.month === event.month &&
-            existingEvent.year === event.year
-          ) {
-            existingEvent.events.push(...event.events);
-            existe = true;
-          }
-        });
-
-        if (!existe) {
-          eventsArr.push(event);
-        }
-      });
-
-      initCalendar(); // Atualiza o calendário depois de carregar
+      // Adiciona os eventos vindos do banco no eventsArr
+      eventsArr = data;
+      saveEvents(userId);   // Salva no localStorage para não precisar carregar de novo
+      initCalendar(); // Atualiza o calendário
     })
     .catch(error => console.error('Erro:', error));
 }
 
+// Função para pegar o userId da sessão (a ser implementada conforme o seu sistema)
+function getUserIdFromSession() {
+  // Aqui você pode pegar o userId do localStorage, sessionStorage ou cookie
+  // Exemplo: 
+  return sessionStorage.getItem('userId') || localStorage.getItem('userId') || null;
+}
+
 carregarConsultasDoBanco()
 
+function logout() {
+  localStorage.removeItem(`events_${userId}`);
+  // Limpar outras informações de login ou redirecionar o usuário, se necessário
+}

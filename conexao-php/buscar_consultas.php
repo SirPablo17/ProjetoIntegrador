@@ -1,16 +1,29 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 require_once('conexao.php');
 
 try {
-    // Buscando todas as consultas com JOINs
+    // Verifica se o cliente está logado
+    if (isset($_SESSION['cliente_logado']) && $_SESSION['cliente_logado'] === true) {
+        $usuarioID = $_SESSION['cliente_id'];  // Usuário logado como cliente
+    } elseif (isset($_SESSION['admin_logado']) && $_SESSION['admin_logado'] === true) {
+        $usuarioID = $_SESSION['admin_id'];  // Administrador logado, se necessário
+    } else {
+        echo json_encode(['error' => 'Usuário não está logado']);
+        exit;
+    }
+
+    // Consulta SQL para buscar apenas as consultas do usuário logado (cliente ou admin)
     $sql = "SELECT tu.nome, tc.valorConsulta, tc.dataConsulta, tp.descrisaoProcedimento
             FROM tblConsulta tc
             INNER JOIN tblConsultaProcedimento tpp ON tpp.consultaID = tc.consultaID
             INNER JOIN tblProcedimentos tp ON tp.procedimentoID = tpp.procedimentoID
-            INNER JOIN tblUsuario tu ON tu.usuarioID = tc.usuarioID";
+            INNER JOIN tblUsuario tu ON tu.usuarioID = tc.usuarioID
+            WHERE tc.usuarioID = :usuarioID"; // Filtro pelo ID do usuário logado
 
     $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':usuarioID', $usuarioID);
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -26,7 +39,6 @@ try {
         // Cria uma chave única por data
         $key = $day . '-' . $month . '-' . $year;
 
-        // Se ainda não existe esse dia no array, cria
         if (!isset($eventos[$key])) {
             $eventos[$key] = [
                 'day' => $day,
@@ -48,7 +60,7 @@ try {
         ];
     }
 
-    // Reindexa os eventos para um array simples
+    // Reindexa os eventos para um array simples e retorna em formato JSON
     echo json_encode(array_values($eventos));
 
 } catch (PDOException $e) {
