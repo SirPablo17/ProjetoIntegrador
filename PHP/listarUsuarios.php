@@ -58,7 +58,7 @@ function confirmEdition(){
 <table>
     <tr>
         <th>Código</th>
-        <th>Role</th>
+        <th>Tipo de Permissões</th>
         <th>Nome</th>
         <th>CPF</th>
         <th>Ativo</th>

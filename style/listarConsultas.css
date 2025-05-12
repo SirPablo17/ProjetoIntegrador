@@ -75,3 +75,15 @@ a.botao-voltar {
 a.botao-voltar:hover {
     background-color: #540b1c;
 }
+
+a[href*="painelCliente.php"] {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: #771127;
+    font-weight: 600;
+}
+
+a[href*="painelCliente.php"]:hover {
+    text-decoration: underline;
+}

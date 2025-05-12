@@ -13,7 +13,7 @@ $clienteID = $_SESSION['cliente_id'];
 
 try {
     // Seleciona as consultas desse cliente com os procedimentos associados
-    $stmt = $conn->prepare("SELECT c.consultaID, c.dataConsulta, p.descrisaoProcedimento, p.valorProcedimento
+    $stmt = $conn->prepare("SELECT c.consultaID, c.dataConsulta, p.descrisaoProcedimento, p.valorProcedimento, c.consultaConfirmada
                             FROM tblConsulta c
                             LEFT JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
                             LEFT JOIN tblProcedimentos p ON cp.procedimentoID = p.procedimentoID
@@ -64,6 +64,7 @@ try {
 <?php endif; ?>
 
 <br>
+
 <a href="painelCliente.php">Voltar ao Painel do Cliente</a>
 
 </body>
