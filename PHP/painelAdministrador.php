@@ -26,8 +26,9 @@ if(!isset($_SESSION['admin_logado'])){
     <h2>Seja Bem-Vindo, <?php echo htmlspecialchars($_SESSION['admin_nome']);?></h2>
 
     <div class="botoes-painel">
-        <a href="#" class="botao-acao">Cadastrar Usuário</a>
+        <a href="cadastrar_administrador.php" class="botao-acao">Cadastrar Usuário</a>
         <a href="listarUsuarios.php" class="botao-acao">Listar Usuários</a>
+        <a href="#" class="botao-acao">Listar Consultas</a>
         <a href="logout.php" class="botao-acao sair">Sair</a> 
     </div>
 </main>

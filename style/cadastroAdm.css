@@ -1,5 +1,19 @@
 @import url("style.css");
 
+.login-button{
+    visibility: hidden;
+}
+
+header {
+    background-color: #771127;
+    padding: 1.5rem;
+    text-align: center;
+    color: #ECD8E0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
 /* Centralização do main */
 main {
     display: flex;
@@ -11,7 +25,7 @@ main {
 
 /* Container do formulário */
 .cadastro {
-    max-width: 600px;
+    max-width: 650px;
     width: 100%;
     background-color: #771127;
     border-radius: 16px;
@@ -97,9 +111,9 @@ main {
 
 a[href*="painelAdministrador.php"] {
     display: inline-block;
-    margin-top: 1.5rem;
+
     text-decoration: none;
-    color: #771127;
+    color: #ECD8E0;
     font-weight: 600;
 }
 

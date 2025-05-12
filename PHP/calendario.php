@@ -73,6 +73,9 @@
     <button class="add-event">
       <i class="fas fa-plus"></i>
     </button>
+
+    <a href="painelCliente.php">Voltar</a>
+
   </div>
   <script src="../js/scriptCalen.js"></script>
 </body>

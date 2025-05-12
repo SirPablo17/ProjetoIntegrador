@@ -15,7 +15,7 @@ try {
     $endereco = $_POST['enderecoUsuario'];
 
     // Definindo a role, status e endereço (exemplo de valor padrão, ajuste se necessário)
-    $role = 'cliente';
+    $role = 'adm';
     $status = 1;
 
     $sql = "INSERT INTO tblUsuario (roleUsuario, nome, CPF, endereco, emailUsuario, senhaUsuario, CEP, telefoneUsuario, dataNascimento, usuarioAtivoInativo)
@@ -36,7 +36,7 @@ try {
     $query->bindParam(':status', $status, PDO::PARAM_INT);
 
     if ($query->execute()) {
-        $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
+        $_SESSION['mensagem_sucesso'] = "Administrador cadastrado com sucesso!";
         header('Location: /Projeto-PI---TSI---2--semestre-/PHP/Login.php');
         exit;
     } else {

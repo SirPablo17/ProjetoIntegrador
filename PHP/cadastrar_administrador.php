@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/cadastroAdm.css">
+    <link rel="stylesheet" href="../style/global.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Administrador</h1>
+    </header>
+
+    <main>
+        <div class="cadastro">
+
+
+            <h2>Cadastrar Administrador</h2>
+            <form action="../conexao-php/processa_cadastroAdm.php" method="POST" class="cadastro_form">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="digite seu nome" name="nomeCompleto" required>
+
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" id="nascimento" name="dataNascimento" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" name="cpfUsuario" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefoneUsuario" placeholder="(xx) xxxxx-xxxx">
+
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cepUsuario" placeholder="00000-000">
+
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="enderecoUsuario">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="emailUsuario" placeholder="digite seu email" required>
+
+                <label for="confirm_email">Confirme seu e-mail</label>
+                <input type="email" id="confirm_email" name="confirmEmailUsuario" placeholder="confirme seu email"
+                    required>
+
+                <label for="senha">Escolha uma senha</label>
+                <input type="password" id="senha" name="usuarioSenha" placeholder="digite sua senha" required>
+
+                <label for="confirm_senha">Confirme sua senha</label>
+                <input type="password" id="confirm_senha" name="confirmUsuarioSenha" placeholder="confirme sua senha"
+                    required>
+
+                <div class="centralizar_botao">
+                    <button type="submit" class="botao_acao">Cadastrar</button>
+                </div>
+                    
+                <a href="painelAdministrador.php">Voltar a página</a>
+            </form>
+
+
+        </div>
+    </main>
+
+</body>
+
+</html>

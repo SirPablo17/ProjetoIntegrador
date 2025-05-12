@@ -38,7 +38,7 @@ try {
     
             if ($queryCliente->rowCount() > 0) {
                 //echo "<p>Usuário encontrado. Redirecionando...</p>";
-                $_SESSION['admin_logado'] = true;
+                $_SESSION['cliente_logado'] = true;
                 $_SESSION['cliente_id'] = $user[0]['usuarioID'];
                 $_SESSION['cliente_nome'] = $user[0]['nome'];
                 header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelCliente.php');

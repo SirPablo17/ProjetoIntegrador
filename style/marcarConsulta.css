@@ -1,0 +1,158 @@
+html {
+    background-color: #ECD8E0;
+}
+
+header {
+    background-color: #771127;
+    padding: 1.5rem;
+    text-align: center;
+    color: #ECD8E0;
+}
+
+/* Centralização do main */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Container do formulário */
+.marcar-consulta {
+    max-width: 700px;
+    width: 100%;
+    background-color: #771127;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem 3rem;
+}
+
+/* Título */
+.marcar-consulta h2 {
+    color: #ECD8E0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Formulário */
+.marcar-consulta form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Labels */
+.marcar-consulta label {
+    font-weight: 600;
+    color: #ECD8E0;
+}
+
+/* Campo de data */
+.marcar-consulta input[type="date"] {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.marcar-consulta input[type="date"]:focus {
+    border-color: #771127;
+    box-shadow: 0 0 5px rgba(119, 17, 39, 0.4);
+    outline: none;
+}
+
+/* Procedimentos (estilo cards) */
+.procedimentos-container {
+    background-color: #ECD8E0;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.procedimentos-container p {
+    font-weight: bold;
+    color: #771127;
+    margin-bottom: 0.8rem;
+}
+
+.procedimentos-container label {
+    display: block;
+    background-color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.procedimentos-container label:hover {
+    background-color: #f3f3f3;
+    box-shadow: 0 0 4px rgba(119, 17, 39, 0.2);
+}
+
+.procedimentos-container input[type="checkbox"] {
+    margin-right: 0.6rem;
+    transform: scale(1.2);
+}
+
+/* Centralizar botão */
+.centralizar_botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Botão ação */
+.botao_acao {
+    background-color: #ECD8E0;
+    color: #771127;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.botao_acao:hover {
+    cursor: pointer;
+    background-color: #771127;
+    color: #ECD8E0;
+    border: 1px solid #ECD8E0;
+    transform: scale(1.05);
+}
+
+/* Link de voltar */
+.voltar-link {
+    display: inline-block;
+    margin-top: 1.8rem;
+    text-decoration: none;
+    color: #ECD8E0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.voltar-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .marcar-consulta {
+        padding: 2rem;
+    }
+
+    .botao_acao {
+        width: 100%;
+    }
+}

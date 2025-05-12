@@ -10,7 +10,7 @@ const calendar = document.querySelector(".calendar"),
   eventDate = document.querySelector(".event-date"),
   eventsContainer = document.querySelector(".events"),
   addEventBtn = document.querySelector(".add-event"),
-  addEventWrapper = document.querySelector(".add-event-wrapper "),
+  addEventWrapper = document.querySelector(".add-event-wrapper"),
   addEventCloseBtn = document.querySelector(".close "),
   addEventTitle = document.querySelector(".event-name "),
   addEventFrom = document.querySelector(".event-time-from "),
@@ -465,3 +465,41 @@ function convertTime(time) {
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
 }
+
+
+function carregarConsultasDoBanco() {
+  fetch('/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        console.error('Erro ao carregar consultas:', data.error);
+        return;
+      }
+
+      // Adiciona as consultas no eventsArr
+      data.forEach(event => {
+        // Verifica se já existe um evento no mesmo dia
+        let existe = false;
+        eventsArr.forEach(existingEvent => {
+          if (
+            existingEvent.day === event.day &&
+            existingEvent.month === event.month &&
+            existingEvent.year === event.year
+          ) {
+            existingEvent.events.push(...event.events);
+            existe = true;
+          }
+        });
+
+        if (!existe) {
+          eventsArr.push(event);
+        }
+      });
+
+      initCalendar(); // Atualiza o calendário depois de carregar
+    })
+    .catch(error => console.error('Erro:', error));
+}
+
+carregarConsultasDoBanco()
+

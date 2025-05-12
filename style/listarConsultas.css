@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    color: #771127;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #771127;
+    color: #ECD8E0;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Botões de ação (Editar / Excluir) */
+a.action-btn {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    margin: 0 0.2rem;
+    text-decoration: none;
+    background-color: #771127;
+    color: #ECD8E0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.action-btn:hover {
+    background-color: #540b1c;
+}
+
+/* Botão de excluir com cor diferente (se quiser diferenciar mais) */
+a.delete-btn {
+    background-color: #a22020;
+}
+
+a.delete-btn:hover {
+    background-color: #721515;
+}
+
+/* Botão voltar */
+a.botao-voltar {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    background-color: #771127;
+    color: #ECD8E0;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+a.botao-voltar:hover {
+    background-color: #540b1c;
+}
