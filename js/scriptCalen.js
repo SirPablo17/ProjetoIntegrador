@@ -508,25 +508,7 @@ function addEvents(events) {
 
 
 function carregarConsultasDoBanco() {
-  // Só carrega do banco SE não tiver nada no localStorage
-  const storedEvents = localStorage.getItem("events");
-  if (storedEvents && JSON.parse(storedEvents).length > 0) {
-    // Já temos dados no localStorage — carrega isso
-    eventsArr = JSON.parse(storedEvents);
-    initCalendar();
-    return;
-  }
-
-  // Verifica se o userId está disponível (do lado do cliente)
-  const userId = getUserIdFromSession(); // Função para obter o userId da sessão ou de um local específico
-
-  if (!userId) {
-    console.error("Usuário não logado");
-    return;
-  }
-
-  // Se não tiver no localStorage, busca do banco
-  fetch(`/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php?user_id=${userId}`)
+  fetch('/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php')
     .then(response => response.json())
     .then(data => {
       if (data.error) {
@@ -534,24 +516,28 @@ function carregarConsultasDoBanco() {
         return;
       }
 
-      // Adiciona os eventos vindos do banco no eventsArr
+      // Armazena os eventos vindos do banco
       eventsArr = data;
-      saveEvents(userId);   // Salva no localStorage para não precisar carregar de novo
+
+      // Opcional: Se quiser ainda salvar no localStorage (sem userId agora)
+      //localStorage.setItem('events', JSON.stringify(eventsArr));
+
       initCalendar(); // Atualiza o calendário
     })
     .catch(error => console.error('Erro:', error));
 }
 
-// Função para pegar o userId da sessão (a ser implementada conforme o seu sistema)
-function getUserIdFromSession() {
-  // Aqui você pode pegar o userId do localStorage, sessionStorage ou cookie
-  // Exemplo: 
-  return sessionStorage.getItem('userId') || localStorage.getItem('userId') || null;
-}
-
-carregarConsultasDoBanco()
+carregarConsultasDoBanco();
 
 function logout() {
-  localStorage.removeItem(`events_${userId}`);
-  // Limpar outras informações de login ou redirecionar o usuário, se necessário
+  // Remove os eventos do localStorage
+  localStorage.removeItem('events');
+
+  // Limpa qualquer outra info (se quiser garantir)
+  sessionStorage.clear();
+  localStorage.removeItem('userId');  // Caso ainda exista
+  sessionStorage.removeItem('userId');
+
+  // Redireciona para a página de login
+  window.location.href = 'login.html';
 }
