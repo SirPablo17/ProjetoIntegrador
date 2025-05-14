@@ -16,6 +16,7 @@ if (!$id) {
 
 try {
         // Excluir administrador
+
     $stmt = $conn->prepare("DELETE FROM tblUsuario WHERE usuarioID = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();

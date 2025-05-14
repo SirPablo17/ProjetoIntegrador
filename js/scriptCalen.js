@@ -134,12 +134,12 @@ function initCalendar() {
 
 //function to add month and year on prev and next button
 function prevMonth() {
-  month--;
+   month--;
   if (month < 0) {
-    month = 11;
-    year--;
-  }
-  initCalendar();
+     month = 11;
+     year--;
+   }
+   initCalendar();
 }
 
 function nextMonth() {

@@ -21,9 +21,6 @@ try {
     $stmtProc->execute();
 
     // 2️⃣ Exclui a consulta na tblConsulta
-    $stmtConsulta = $conn->prepare("DELETE FROM tblConsulta WHERE consultaID = :id");
-    $stmtConsulta->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmtConsulta->execute();
 
     $_SESSION['mensagem_sucesso'] = "Consulta excluída com sucesso!";
     header('Location: painelCliente.php');
