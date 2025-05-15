@@ -100,7 +100,7 @@
             </section>
         </main>
     </div>
-    <script src="js/mobile-navbar.js"></script>
+    <script src="../js/mobile-navbar.js"></script>
 </body>
 
 </html>
