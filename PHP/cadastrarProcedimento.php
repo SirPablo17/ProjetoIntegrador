@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin_logado'])) {
 
                 <div class="campo">
                     <label for="nascimento">Valor do Procedimento</label>
-                    <input type="text" name="valorProcedimento" required>
+                    <input type="text" oninput="MOEDA(this)" name="valorProcedimento" required>
                 </div>
 
                 <div class="campo">

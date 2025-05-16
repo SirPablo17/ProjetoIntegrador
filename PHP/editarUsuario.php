@@ -94,46 +94,66 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="editar">
         <div class="h1-title"><h1>Editar Administrador</h1></div>
         <form action="" method="POST" class="editar_form">
-            <label for="nome">Nome completo:</label>
-            <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($adm['nome']); ?>" required>
 
-            <label for="roleUsuario">Role:</label>
-            <select id="roleUsuario" name="roleUsuario">
-                <option value="adm" <?php echo ($adm['roleUsuario']=='adm' ) ? 'selected' : '' ; ?>>Administrador
-                </option>
-                <option value="cliente" <?php echo ($adm['roleUsuario']=='cliente' ) ? 'selected' : '' ; ?>>Cliente
-                </option>
-            </select>
+            <div class = "campo"> 
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($adm['nome']); ?>" required>
+            </div>
 
-            <label for="dataNascimento">Data de nascimento:</label>
-            <input type="date" id="dataNascimento" name="dataNascimento"
+            <div class = "campo"> 
+                <label for="roleUsuario">Role:</label>
+                <select id="roleUsuario" name="roleUsuario">
+                    <option value="adm" <?php echo ($adm['roleUsuario']=='adm' ) ? 'selected' : '' ; ?>>Administrador
+                    </option>
+                    <option value="cliente" <?php echo ($adm['roleUsuario']=='cliente' ) ? 'selected' : '' ; ?>>Cliente
+                    </option>
+                </select>
+            </div>
+
+            <div class = "campo"> 
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento"
                 value="<?php echo htmlspecialchars($adm['dataNascimento']); ?>" required>
+            </div>
 
-            <label for="CPF">CPF:</label>
-            <input type="text" id="CPF" name="CPF" value="<?php echo htmlspecialchars($adm['CPF']); ?>" required>
+            <div class = "campo"> 
+                <label for="CPF">CPF:</label>
+                <input type="text" id="CPF" oninput="CPF(this)" name="CPF" value="<?php echo htmlspecialchars($adm['CPF']); ?>" required>
+            </div>
 
-            <label for="telefoneUsuario">Telefone:</label>
-            <input type="text" id="telefoneUsuario" name="telefoneUsuario"
+            <div class = "campo">
+                <label for="telefoneUsuario">Telefone:</label>
+                <input type="text" id="telefoneUsuario" oninput="TEL(this)"  name="telefoneUsuario"
                 value="<?php echo htmlspecialchars($adm['telefoneUsuario']); ?>">
 
-            <label for="CEP">CEP:</label>
-            <input type="text" id="CEP" name="CEP" value="<?php echo htmlspecialchars($adm['CEP']); ?>">
+            </div>
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" value="<?php echo htmlspecialchars($adm['endereco']); ?>">
+            <div class = "campo"> 
+                <label for="CEP">CEP:</label>
+                <input type="text" id="CEP" oninput="CEP(this)" name="CEP" value="<?php echo htmlspecialchars($adm['CEP']); ?>">
+            </div>
+            <div class = "campo"> 
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" value="<?php echo htmlspecialchars($adm['endereco']); ?>">
+            </div>
 
-            <label for="emailUsuario">E-mail:</label>
-            <input type="email" id="emailUsuario" name="emailUsuario"
+            <div class = "campo">
+                <label for="emailUsuario">E-mail:</label>
+                <input type="email" id="emailUsuario" name="emailUsuario"
                 value="<?php echo htmlspecialchars($adm['emailUsuario']); ?>" required>
+            </div>
 
-            <label for="senhaUsuario">Senha:</label>
-            <input type="password" id="senhaUsuario" name="senhaUsuario"
+            <div class = "campo">
+                  <label for="senhaUsuario">Senha:</label>
+                <input type="password" id="senhaUsuario" name="senhaUsuario"
                 value="<?php echo htmlspecialchars($adm['senhaUsuario']); ?>" required>
-
-            <label for="usuarioAtivoInativo">Ativo:</label>
-            <input type="checkbox" id="usuarioAtivoInativo" name="usuarioAtivoInativo" <?php echo
+            </div>
+            <div class = "campo"> 
+                <label for="usuarioAtivoInativo">Ativo:</label>
+                <input type="checkbox" id="usuarioAtivoInativo" name="usuarioAtivoInativo" <?php echo
                 $adm['usuarioAtivoInativo'] ? 'checked' : '' ; ?>>
-
+            </div>
+            
             <div class="centralizar_botao">
                 <button type="submit" class="botao_acao">Atualizar</button>
             </div>
@@ -143,6 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="listarUsuarios.php">Voltar à Lista de Administradores</a>
     </div>
 
+    <script src="../js/mascaras.js"></script>
 </body>
 
 </html>

@@ -70,7 +70,7 @@ function confirmEdition(){
         <td><?php echo $adm['usuarioID']; ?></td>
         <td><?php echo $adm['roleUsuario']; ?></td>
         <td><?php echo $adm['nome']; ?></td>
-        <td><?php echo $adm['CPF']; ?></td>
+        <td class ="cpf"><?php echo $adm['CPF']; ?></td>
         <td><?php echo ($adm['usuarioAtivoInativo'] == 1 ? 'Sim' : 'Não'); ?></td>
         
         <td>
@@ -99,5 +99,6 @@ function confirmEdition(){
 </table>
     <p></p>
     <a href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
+    <script src="../js/mascaras.js"></script>
 </body>
 </html>
