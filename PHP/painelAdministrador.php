@@ -27,6 +27,7 @@ if(!isset($_SESSION['admin_logado'])){
 
     <div class="botoes-painel">
         <a href="cadastrar_administrador.php" class="botao-acao">Cadastrar Usuário</a>
+        <a href="cadastrarProcedimento.php" class="botao-acao">Cadastrar Novo Procedimento</a>
         <a href="listarUsuarios.php" class="botao-acao">Listar Usuários</a>
         <a href="listarTodasConsultas.php" class="botao-acao">Listar Consultas</a>
         <a href="logout.php" class="botao-acao sair">Sair</a> 

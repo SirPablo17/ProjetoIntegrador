@@ -8,9 +8,6 @@ if (!isset($_SESSION['admin_logado']) || !isset($_SESSION['admin_id'])) {
     exit();
 }
 
-// Pega o ID do cliente da sessão
-$clienteID = $_SESSION['admin_id'];
-
 try {
     // Seleciona as consultas desse cliente com os procedimentos associados
     $stmt = $conn->prepare("SELECT c.consultaID, tc.usuarioID, tc.nome, c.dataConsulta, p.descrisaoProcedimento, p.valorProcedimento, c.consultaConfirmada
@@ -59,13 +56,12 @@ try {
             <td><?php echo 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
             <?php $data = new DateTime($consulta['dataConsulta']);?>
             <td><?php echo $data->format('d/m/Y H:i');?></td>
-            <td><?php$confirmado = $consulta['consultaConfirmada'];
+            <td><?php $confirmado = $consulta['consultaConfirmada'];
             if($confirmado == 0){
                 echo "Consulta não confirmada";
             } else {
                 echo "Consulta Confirmada";
             }?>
-            <td></td>
             <td>
                 <a href="#?id=<?php echo $consulta['consultaID']; ?>" class="action-btn"onclick="return confirm('Você deseja APROVAR está consulta?');">Aprovar</a>
                 <a href="#?id=<?php echo $consulta['consultaID']; ?>" class="action-btn"onclick="return confirm('Você deseja CANCELAR está consulta?');">Cancelar</a>
