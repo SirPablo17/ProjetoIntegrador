@@ -3,12 +3,6 @@ session_start();
 
 try {
     require_once('conexao.php');
-
-    if (!isset($_SESSION['admin_logado'])) {
-        header('Location: login.php');
-        exit;
-    }
-    
     // Coletando os dados do formulário
     $nome = $_POST['nomeProcedimento'];
     $valorProcedimento = $_POST['valorProcedimento'];
@@ -27,7 +21,7 @@ try {
 
     if ($query->execute()) {
         $_SESSION['mensagem_sucesso'] = "Procedimento cadastrado com sucesso!";
-        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/Login.php');
+        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/cadastrarProcedimento.php');
         exit;
     } else {
         echo "<p>Erro na execução da query:</p>";
