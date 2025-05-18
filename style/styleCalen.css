@@ -156,6 +156,10 @@ body {
 .calendar .days .next-date {
   color: #b3b3b3;
 }
+.calendar .days .prev-date{
+visibility: hidden;
+
+}
 .calendar .days .active {
   position: relative;
   font-size: 2rem;

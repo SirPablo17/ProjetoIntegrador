@@ -23,6 +23,9 @@ let month = today.getMonth();
 let year = today.getFullYear();
 let consultasCarregadas = false;
 
+const data = new Date();
+const dataNumerica = `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
+
 
 const months = [
   "Janeiro",
@@ -88,7 +91,13 @@ function initCalendar() {
   let days = "";
 
   for (let x = day; x > 0; x--) {
-    days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
+    days += `<div class="day prev-date">${prevDays - x + 1}</div>`
+      setTimeout(() => {
+          document.querySelectorAll(".day.prev-date").forEach(div => {
+              div.style.pointerEvents = "none"; // Bloqueia cliques e interações
+          });
+      }, 0);
+      ;
   }
 
   for (let i = 1; i <= lastDate; i++) {
@@ -111,6 +120,7 @@ function initCalendar() {
       activeDay = i;
       getActiveDay(i);
       updateEvents(i);
+      verificaDataAnterior = i;
       if (event) {
         days += `<div class="day today active event">${i}</div>`;
       } else {
@@ -120,9 +130,25 @@ function initCalendar() {
       if (event) {
         days += `<div class="day event">${i}</div>`;
       } else {
+        compareDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+        if (dataNumerica <= compareDate){
+          console.log(dataNumerica, compareDate);
+        console.log(i)
         days += `<div class="day ">${i}</div>`;
+      } else {
+          days += `<div class="day  " id="day-${i}">${i}</div>`; 
+          const diasBloqueados = [i];
+
+          setTimeout(() => {
+              diasBloqueados.forEach(dia => {
+                  document.getElementById(`day-${dia}`).style.pointerEvents = "none";
+              });
+          }, 0);
+
+
       }
     }
+  }
   }
 
   for (let j = 1; j <= nextDays; j++) {
