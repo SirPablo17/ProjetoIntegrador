@@ -37,7 +37,7 @@ try {
 
     if ($query->execute()) {
         $_SESSION['mensagem_sucesso'] = "Administrador cadastrado com sucesso!";
-        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/Login.php');
+        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/cadastrar_administrador.php');
         exit;
     } else {
         echo "<p>Erro na execução da query:</p>";

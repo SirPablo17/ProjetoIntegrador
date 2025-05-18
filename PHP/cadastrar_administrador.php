@@ -1,3 +1,14 @@
+<?php
+session_start();
+require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
+
+// Verifica se o cliente está logado
+if (!isset($_SESSION['admin_logado'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -79,7 +90,13 @@
                     
                 <a href="painelAdministrador.php">Voltar a página</a>
             </form>
-
+            
+            <?php
+                if (isset($_SESSION['mensagem_sucesso'])) {
+                    echo "<div style='color: white; font-weight: bold; text-align: center; margin-top: 15px;'>" . $_SESSION['mensagem_sucesso'] . "</div>";
+                unset($_SESSION['mensagem_sucesso']);
+                }
+            ?>
 
         </div>
     </main>

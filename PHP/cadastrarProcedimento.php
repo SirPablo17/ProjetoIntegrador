@@ -8,6 +8,7 @@ if (!isset($_SESSION['admin_logado'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -29,7 +30,7 @@ if (!isset($_SESSION['admin_logado'])) {
 
 
             <h2>Cadastrar Procedimento</h2>
-            <form action="../conexao-php/cadastrarProcedimento.php" method="POST" class="cadastro_form">
+            <form action="../conexao-php/processa_cadastrarProcedimento.php" method="POST" class="cadastro_form">
                 
                 <div class="campo">
                     <label for="nome">Nome Do Procedimento:</label>
@@ -49,9 +50,15 @@ if (!isset($_SESSION['admin_logado'])) {
                 <div class="centralizar_botao">
                     <button type="submit" class="botao_acao">Cadastrar</button>
                 </div>
-                    
                 <a href="painelAdministrador.php">Voltar a página</a>
             </form>
+            <?php
+            if (isset($_SESSION['mensagem_sucesso'])) {
+                echo "<div style='color: white; font-weight: bold; text-align: center; margin-top: 15px;'>" . $_SESSION['mensagem_sucesso'] . "</div>";
+                unset($_SESSION['mensagem_sucesso']);
+            }
+?>
+
 
         </div>
     </main>
