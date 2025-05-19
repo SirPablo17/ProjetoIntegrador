@@ -13,27 +13,29 @@ if(!isset($_SESSION['admin_logado'])){
     <meta charset="UTF-8">
     <title>Painel do Administrador</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../style/painelAdminstrador.css"> <!-- Link para o CSS -->
     <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/painelAdministrador.css">
+    <link rel="stylesheet" href="../style/listarConsultas.css">
 </head>
 <body>
 
-<header>
-    <h1>Painel do Administrador</h1>
-</header>
+<div class="admin-container">
+    <aside class="sidebar">
+        <h2>Painel Admin</h2>
+        <div class="usuarioNome"><h3>Bem-vindo, <?php echo htmlspecialchars($_SESSION['admin_nome']);?></h3></div>
+        <a href="cadastrar_administrador.php">Cadastrar Usuário</a>
+        <a href="listarUsuarios.php">Listar Usuários</a>
+        <a href="cadastrarProcedimento.php">Cadastrar Procedimento</a>
+        <a href="listarProcedimento.php">Listar Procedimentos</a>
+        <a href="logout.php" class="sair">Sair</a>
+    </aside>
+</div>
 
-<main class="painel-admin">
-    <h2>Seja Bem-Vindo, <?php echo htmlspecialchars($_SESSION['admin_nome']);?></h2>
-
-    <div class="botoes-painel">
-        <a href="cadastrar_administrador.php" class="botao-acao">Cadastrar Usuário</a>
-        <a href="cadastrarProcedimento.php" class="botao-acao">Cadastrar Novo Procedimento</a>
-        <a href="listarUsuarios.php" class="botao-acao">Listar Usuários</a>
-        <a href="listarTodasConsultas.php" class="botao-acao">Listar Consultas</a>
-        <a href="logout.php" class="botao-acao sair">Sair</a> 
+<div class="main-content">
+    <div class="section-consultas">
+        <?php include 'listarTodasConsultas.php'; ?>
     </div>
-</main>
+</div>
 
 </body>
 </html>
-

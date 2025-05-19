@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
 
 // Verifica se o cliente está logado
@@ -26,17 +25,7 @@ try {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <title>Minhas Consultas</title>
-    <link rel="stylesheet" href="../style/listarConsultas.css">
-    <link rel="stylesheet" href="../style/global.css">
-</head>
-<body>
-<h2>Minhas Consultas</h2>
-
+<section class="listar-consultas">
 <?php if (empty($consultas)): ?>
     <p>Você ainda não possui nenhuma consulta cadastrada.</p>
 <?php else: ?>
@@ -71,11 +60,4 @@ try {
     <?php endforeach; ?>
 </table>
 <?php endif; ?>
-
-
-<br>
-
-<a href="painelCliente.php">Voltar ao Painel do Cliente</a>
-
-</body>
-</html>
+</section>

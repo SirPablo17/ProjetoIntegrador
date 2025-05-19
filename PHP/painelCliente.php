@@ -13,25 +13,27 @@ if(!isset($_SESSION['cliente_logado'])){
     <meta charset="UTF-8">
     <title>Painel do Usuário</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../style/painelAdminstrador.css"> <!-- Link para o CSS -->
     <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/painelAdministrador.css">
+    <link rel="stylesheet" href="../style/listarConsultas.css">
 </head>
 <body>
 
-<header>
-    <h1>Painel do Usuário</h1>
-</header>
-
-<main class="painel-admin">
-    <h2>Seja Bem-Vindo, <?php echo htmlspecialchars($_SESSION['cliente_nome']); ?></h2>
-
-    <div class="botoes-painel">
+<div class="admin-container">
+    <aside class="sidebar">
+        <h2>Painel Admin</h2>
+        <div class="usuarioNome"><h3>Bem-vindo, <?php echo htmlspecialchars($_SESSION['cliente_nome']);?></h3></div>
         <a href="marcarConsulta.php" class="botao-acao">Marcar consulta</a>
-        <a href="listarConsulta.php" class="botao-acao">Minhas Consultas</a>
         <a href="calendario.php" class="botao-acao">Calendário</a>
         <a href="logout.php" class="botao-acao sair">Sair</a> 
+    </aside>
+</div>
+
+<div class="main-content">
+    <div class="section-consultas">
+        <?php include 'listarConsulta.php'; ?>
     </div>
-</main>
+</div>
 
 </body>
 </html>
