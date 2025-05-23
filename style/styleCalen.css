@@ -1,5 +1,7 @@
 :root {
-  --primary-clr: #b38add;
+  --primary-clr: #771127;
+  --secundary-clr: #ECD8E0; 
+  --shadow-primary: #270008;
 }
 
 * {
@@ -14,7 +16,7 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: #fff;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb {
@@ -29,7 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
-  background-color: #ECD8E0;
+  background-color: var(--secundary-clr);
   
 }
 .container {
@@ -42,7 +44,7 @@ body {
   display: flex;
 
   border-radius: 10px;
-  background-color: #373c4f;
+  background-color: var(--shadow-primary);
 }
 .left {
   width: 60%;
@@ -133,19 +135,19 @@ body {
   justify-content: center;
   cursor: pointer;
   color: var(--primary-clr);
-  border: 1px solid #f5f5f5;
+  border: 1px solid var(--primary-clr);
 }
 .calendar .days .day:nth-child(7n + 1) {
-  border-left: 2px solid #f5f5f5;
+  border-left: 2px solid var(--primary-clr);
 }
 .calendar .days .day:nth-child(7n) {
-  border-right: 2px solid #f5f5f5;
+  border-right: 2px solid var(--primary-clr);
 }
 .calendar .days .day:nth-child(-n + 7) {
-  border-top: 2px solid #f5f5f5;
+  border-top: 2px solid var(--primary-clr);
 }
 .calendar .days .day:nth-child(n + 29) {
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid var(--primary-clr);
 }
 
 .calendar .days .day:not(.prev-date, .next-date):hover {
@@ -154,7 +156,7 @@ body {
 }
 .calendar .days .prev-date,
 .calendar .days .next-date {
-  color: #b3b3b3;
+  color: #878895;
 }
 .calendar .days .prev-date{
 visibility: hidden;
@@ -194,6 +196,7 @@ visibility: hidden;
 }
 .calendar .days .day:hover.event::after {
   background-color: #fff;
+
 }
 .calendar .days .active.event::after {
   background-color: #fff;
@@ -275,7 +278,7 @@ visibility: hidden;
 .right .today-date .event-date {
   font-size: 1rem;
   font-weight: 400;
-  color: #878895;
+  color: #fff;
 }
 .events {
   width: 100%;
@@ -294,11 +297,13 @@ visibility: hidden;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   gap: 5px;
   padding: 0 20px;
   padding-left: 50px;
-  color: #fff;
-  background: linear-gradient(90deg, #3f4458, transparent);
+  color: var(--primary-clr);
+  background: #F3E9EB;
+  border-radius: 14px;
   cursor: pointer;
 }
 /* even event */
@@ -306,12 +311,17 @@ visibility: hidden;
   background: transparent;
 }
 .events .event:hover {
-  background: linear-gradient(90deg, var(--primary-clr), transparent);
+  background: linear-gradient(90deg, #fff, transparent);
 }
 .events .event .title {
   display: flex;
+  justify-content: center;
   align-items: center;
   pointer-events: none;
+}
+
+.title i.fas.fa-circle::before{
+  color: var(--primary-clr);
 }
 .events .event .title .event-title {
   font-size: 1rem;
@@ -328,12 +338,12 @@ visibility: hidden;
 .events .event .event-time {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #878895;
+  color: var(--primary-clr);
   margin-left: 15px;
   pointer-events: none;
 }
 .events .event:hover .event-time {
-  color: #fff;
+  color: var(--primary-clr);
 }
 /* add tick in event after */
 .events .event::after {
@@ -363,8 +373,8 @@ visibility: hidden;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #878895;
-  border: 2px solid #878895;
+  color: #fff;
+  border: 2px solid #fff;
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -384,7 +394,7 @@ visibility: hidden;
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #878895;
+  color: #fff;
 }
 .add-event-wrapper {
   position: absolute;
@@ -471,11 +481,11 @@ visibility: hidden;
   outline: none;
   border: none;
   color: #fff;
-  background-color: var(--primary-clr);
+  background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px 10px;
-  border: 1px solid var(--primary-clr);
+  border: 1px solid #fff;
 }
 .add-event-footer .add-event-btn:hover {
   background-color: transparent;
@@ -553,7 +563,7 @@ visibility: hidden;
   padding: 10px;
   font-size: 12px;
   color: #fff;
-  background-color: #b38add;
+  background-color: var(--primary-clr);
 }
 .credits a {
   color: #fff;
@@ -567,4 +577,26 @@ visibility: hidden;
 #sobreMim .interface {
   display: flex;
   align-items: center;
+}
+
+.sair {
+  margin-top: auto;
+  background-color: #d6aaae;
+  color: #771127;
+  border-left: none;
+  text-align: center;
+
+}
+
+.sair:hover {
+  transition: background-color 0.3s;
+  background-color: #721c24;
+  color: #f8d7da;
+}
+
+.botoes__finais {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 10px; /* Espaço entre os itens */
 }

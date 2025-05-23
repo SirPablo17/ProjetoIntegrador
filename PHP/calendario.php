@@ -61,6 +61,7 @@ if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
         <div class="event-date">12 de Dezembro de 2022</div>
       </div>
       <div class="events"></div>
+      
       <div class="add-event-wrapper">
         <div class="add-event-header">
           <div class="title">Adicionar Evento</div>
@@ -80,13 +81,17 @@ if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
         <div class="add-event-footer">
           <button class="add-event-btn">Adicionar Evento</button>
         </div>
+       
       </div>
+      <div class="botoes__finais">
+      <a href="painelCliente.php" class="sair">Voltar</a>
+      <button class="add-event">
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
-    <button class="add-event">
-      <i class="fas fa-plus"></i>
-    </button>
+    </div>
 
-    <a href="painelCliente.php">Voltar</a>
+    
 
   </div>
   <script src="../js/scriptCalen.js"></script>
