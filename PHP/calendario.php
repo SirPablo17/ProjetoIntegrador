@@ -4,7 +4,7 @@ session_start();
 require_once ('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
 
 // Verifica se o cliente está logado
-if (!isset($_SESSION['cliente_logado'])) {
+if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
     header('Location: login.php');
     exit;
 }
