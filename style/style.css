@@ -137,6 +137,8 @@ section #topoDoSite {
 
 }
 
+
+
 @keyframes flutuar {
 
     0% {
@@ -246,6 +248,65 @@ section #topoDoSite {
     max-width: 600px;
     font-size: 30px;
     color: #771127;
+}
+
+footer {
+    background-color: #771127;
+    padding: 40px 0;
+    color: #333;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 8px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-nav ul li a:hover {
+    color: black; /* tom suave roxo */
+}
+
+.footer-social a {
+    font-size: 24px;
+    color: #ECD8E0;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: black;
 }
 
 

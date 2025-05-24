@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daiane Carvalho</title>
     <link rel="icon" href="../img/LogoPNG.png" type="image/x-icon">
-        <!-- CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/global.css">
     <!-- BOOTSTRAP ICONS -->
@@ -89,16 +89,42 @@
                 <div class="interface">
                     <h2>SOBRE MIM</h2>
                     <div class="conteudoSobreMim">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloribus consequuntur
-                                voluptas odio similique ipsum vitae? Tenetur laboriosam aliquid sit deleniti commodi?
-                                Neque
-                                in quos sapiente necessitatibus assumenda dolore aut.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloribus consequuntur
+                            voluptas odio similique ipsum vitae? Tenetur laboriosam aliquid sit deleniti commodi?
+                            Neque
+                            in quos sapiente necessitatibus assumenda dolore aut.</p>
                         <div> <img src="../img/LogoPNG.png" height="300"></div>
                     </div>
 
                 </div>
             </section>
         </main>
+
+        <footer>
+            <div class="interface">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="../img/LogoPNG.png" height="60" alt="Logo Daiane Carvalho">
+                        <p>&copy; 2025 Daiane Carvalho. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="footer-nav">
+                        <ul>
+                            <li><a href="#topoDoSite">Início</a></li>
+                            <li><a href="#especialidades">Serviços</a></li>
+                            <li><a href="#sobreMim">Sobre Mim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
     </div>
     <script src="../js/mobile-navbar.js"></script>
 </body>
