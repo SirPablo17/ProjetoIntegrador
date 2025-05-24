@@ -132,15 +132,13 @@ function initCalendar() {
       } else {
         compareDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
         if (dataNumerica <= compareDate){
-          console.log(dataNumerica, compareDate);
-        console.log(i)
         days += `<div class="day ">${i}</div>`;
       } else {
           days += `<div class="day  " id="day-${i}">${i}</div>`; 
           const diasBloqueados = [i];
 
           setTimeout(() => {
-              diasBloqueados.forEach(dia => {
+              diasBloqueados.forEach(dia => {           
                   document.getElementById(`day-${dia}`).style.pointerEvents = "none";
               });
           }, 0);
@@ -291,9 +289,9 @@ function updateEvents(date) {
             <div class="title">
               <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
-            </div>
-            <div class="event-time">
-              <span class="event-time">${event.time}</span>
+              <div class="event-time">
+                <span class="event-time">${event.time}</span>
+              </div>
             </div>
         </div>`;
       });

@@ -299,10 +299,11 @@ visibility: hidden;
   flex-direction: column;
   text-align: center;
   gap: 5px;
+  margin-left: 3%;
   padding: 0 20px;
   padding-left: 50px;
   color: var(--primary-clr);
-  background: #F3E9EB;
+  background: #fff;
   border-radius: 14px;
   cursor: pointer;
 }
@@ -311,13 +312,15 @@ visibility: hidden;
   background: transparent;
 }
 .events .event:hover {
-  background: linear-gradient(90deg, #fff, transparent);
+  transition: background 0.5s;
+  background: var(--secundary-clr);
 }
 .events .event .title {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   pointer-events: none;
+  text-align: left;
 }
 
 .title i.fas.fa-circle::before{
@@ -336,7 +339,8 @@ visibility: hidden;
   color: #fff;
 }
 .events .event .event-time {
-  font-size: 0.8rem;
+  padding-left: 18%;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--primary-clr);
   margin-left: 15px;
@@ -581,10 +585,13 @@ visibility: hidden;
 
 .sair {
   margin-top: auto;
-  background-color: #d6aaae;
+  background-color: #fff;
   color: #771127;
-  border-left: none;
+  border-radius: 5px;
+  padding: 2% 5%;
+  text-decoration: none;
   text-align: center;
+  
 
 }
 
