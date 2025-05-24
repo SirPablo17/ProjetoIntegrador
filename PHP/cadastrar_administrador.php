@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_logado'])) {
                     <input type="date" id="nascimento" name="dataNascimento" required>
                 </div>
 
-                <div class="campo">
+                <div class="CPFcampo">
                     <label for="cpf">CPF:</label>
                     <input type="text" id="cpf" oninput="CPF(this)" placeholder="000.000.000-00" name="cpfUsuario" required>
                 </div>

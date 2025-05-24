@@ -3,7 +3,7 @@ function CPF(cpf) {
 
     let valor = cpf.value || cpf.textContent;
 
-    let v = valor.replaceAll('.', '').replaceAll('-', '');      
+    let v = valor.replaceAll('.', '').replaceAll('-', '').replace(/\D/g, '');      
     if (v.length > 3) v = v.substring(0, 3) + '.' + v.substring(3);
     if (v.length > 7) v = v.substring(0, 7) + '.' + v.substring(7);
     if (v.length > 11) v=  v.substring(0, 11) + '-' + v.substring(11, 13);
@@ -13,16 +13,7 @@ function CPF(cpf) {
     } else {
         cpf.textContent = v;
     }
-
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.cpf').forEach(function (el) {
-            CPF(el);
-        });
-});
-
-
 
 // Mascara TELEFONE
 function TEL(tel){
@@ -32,28 +23,26 @@ function TEL(tel){
     let v = valor.replace(/\D/g, '');
     if (v.length > 2) v = '(' + v.slice(0, 2) + ') ' + v.slice(2);
     if (v.length > 7) v = v.slice(0, 10) + '-' + v.slice(10, 14);
-
+    
+    if (tel.value !== undefined) {
+        tel.value = v;
+    } else {
+        tel.textContent = v;
+    }
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.tel').forEach(function (el) {
-            TEL(el);
-        });
-});
-
 
 // Mascara CEP
 function CEP(cep) {
     let valor = cep.value || cep.textContent;
     let v = valor.replaceAll('-', '');
     if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5, 8); 
-};  
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.tel').forEach(function (el) {
-        CEP(el);
-    });
-});
+    if (cep.value !== undefined) {
+        cep.value = v;
+    } else {
+        cep.textContent = v;
+    }
+};  
 
 //// Mascara MOEDA
 
@@ -69,16 +58,30 @@ function MOEDA(moeda) {
     }).format(formato);
 
     if (elemento.value !== undefined) {
-        elemento.value = moedaFormatada;
+        moeda.value = moedaFormatada;
     } else {
-        elemento.textContent = moedaFormatada;
+        moeda.textContent = moedaFormatada;
     }
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll('.cpf').forEach(function (el) {
+        CPF(el);
+    });
+
+    document.querySelectorAll('.tel').forEach(function (el) {
+        TEL(el);
+    });
+
+    document.querySelectorAll('.cep').forEach(function (el) {
+        CEP(el);
+    });
+
     document.querySelectorAll('.moeda').forEach(function (el) {
         MOEDA(el);
     });
 });
+
 
         
