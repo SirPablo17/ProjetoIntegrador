@@ -26,24 +26,25 @@ if (!isset($_SESSION['admin_logado'])) {
     </header>
 
     <main>
+        
         <div class="cadastro">
 
 
             <h2>Cadastrar Procedimento</h2>
             <form action="../conexao-php/processa_cadastrarProcedimento.php" method="POST" class="cadastro_form">
                 
-                <div class="campo">
+                <div class="nomeProcedimento">
                     <label for="nome">Nome Do Procedimento:</label>
                     <input type="text" name="nomeProcedimento" required>
                 </div>
 
                 <div class="campo">
-                    <label for="nascimento">Valor do Procedimento</label>
-                    <input type="text" oninput="MOEDA(this)" name="valorProcedimento" required>
+                    <label for="valorProcedimento">Valor do Procedimento</label>
+                    <input type="number" name="valorProcedimento" required> R$ </input>
                 </div>
 
                 <div class="campo">
-                    <label for="nascimento">Tempo Gasto no Procedimento</label>
+                    <label for="tempoProcedimento">Tempo Gasto no Procedimento</label>
                     <input type="time" name="tempoProcedimento" required>
                 </div>
 
@@ -53,17 +54,16 @@ if (!isset($_SESSION['admin_logado'])) {
                 <a href="painelAdministrador.php">Voltar a página</a>
             </form>
             <?php
-            if (isset($_SESSION['mensagem_sucesso'])) {
-                echo "<div style='color: white; font-weight: bold; text-align: center; margin-top: 15px;'>" . $_SESSION['mensagem_sucesso'] . "</div>";
-                unset($_SESSION['mensagem_sucesso']);
-            }
-?>
-
-
+                if (isset($_SESSION['mensagem_sucesso'])) {
+                    echo "<div style='color: white; font-weight: bold; text-align: center; margin-top: 15px;'>" . $_SESSION['mensagem_sucesso'] . "</div>";
+                    unset($_SESSION['mensagem_sucesso']);
+                }
+            ?>
         </div>
     </main>
     
     <script src="../js/mascaras.js"></script>
+    <script src="../js/validacao.js"></script>
 </body>
 
 </html>
