@@ -55,7 +55,6 @@ try {
                     <td>
                         <a href="#?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja APROVAR esta consulta?');">Aprovar</a>
                         <a href="#?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja CANCELAR esta consulta?');">Cancelar</a>
-                        <a href="#?id=<?= $consulta['consultaID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente EXCLUIR esta consulta?');">Excluir</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

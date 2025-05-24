@@ -57,7 +57,7 @@ try {
                     <?php $data = new DateTime($consulta['tempoProcedimento']);?>
                     <td><?php echo $data->format('H:i');?></td>   
                     <td>
-                        <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn" onclick="return confirm('Você deseja APROVAR este consulta?');">Aprovar</a>
+                        <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn" onclick="return confirm('Você deseja EDITAR esse procedimento?');">Editar</a>
                         <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente EXCLUIR este consulta?');">Excluir</a>
                     </td>
                 </tr>
@@ -66,8 +66,8 @@ try {
         </table>
     <?php endif; ?>
 
-    <p></p>
-    <a href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
+    <br>
+    <a class="btn-voltar" href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
     <script src="../js/mascaras.js"></script>
 </section>
 

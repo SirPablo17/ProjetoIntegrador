@@ -40,7 +40,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>Listar Usuários</title>
-    <link rel="stylesheet" href="../style/listarUsuario.css">
+    <link rel="stylesheet" href="../style/listarConsultas.css">
     <link rel="stylesheet" href="../style/global.css">
 <script>
 function confirmDeletion() {
@@ -54,6 +54,8 @@ function confirmEdition(){
 
 </head>
 <body>
+
+<section class="section-consultas" >
 <h2>Usuários Cadastrados</h2>
 <table>
     <tr>
@@ -97,8 +99,10 @@ function confirmEdition(){
 
     <?php endforeach; ?>
 </table>
-    <p></p>
-    <a href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
+    <br>
+    <a class="btn-voltar" href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
     <script src="../js/mascaras.js"></script>
+
+</section>
 </body>
 </html>

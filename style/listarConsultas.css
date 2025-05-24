@@ -84,3 +84,16 @@
 .section-consultas .botao-voltar:hover {
     background-color: #540b1c;
 }
+
+/* Link de voltar */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 0.2rem;
+    text-decoration: none;
+    color: #771127;
+    font-weight: 600;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+}
