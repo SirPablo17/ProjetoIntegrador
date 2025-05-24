@@ -36,7 +36,7 @@ if (!isset($_SESSION['admin_logado'])) {
 
                 <div class="campo">
                     <label for="valorProcedimento">Valor do Procedimento:</label>
-                    <input type="number" name="valorProcedimento" step="0.01" required placeholder="Ex: 100.00"> R$
+                    <input type="number" name="valorProcedimento" step="0.01" required placeholder="Ex: R$ 100.00">
                 </div>
 
                 <div class="campo">

@@ -1,72 +1,86 @@
 @import url("style.css");
 
-.login-button{
-    visibility: hidden;
+/* Ocultando o botão de login */
+.login-button {
+    display: none;
 }
 
+/* Cabeçalho fixo com melhoria no espaçamento */
 header {
     background-color: #771127;
     padding: 1.5rem;
     text-align: center;
     color: #ECD8E0;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Centralização do main */
+/* Ajuste do espaçamento para não sobrepor o header */
+body {
+    margin: 0;
+    padding-top: 6rem; /* Garante que o conteúdo não fique escondido pelo header */
+}
+
+/* Centralização do conteúdo */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    min-height: 100vh;
 }
 
-
-/* Container do formulário */
+/* Container do formulário com suavidade */
 .cadastro {
     max-width: 650px;
+    height: 525px;
     width: 100%;
-    background-color: #771127;
+    background: linear-gradient(135deg, #771127, #51101C);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-    padding: 2rem 2.5rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
     margin-top: 5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Título */
+.cadastro:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Título elegante */
 .cadastro h2 {
     color: #ECD8E0;
     text-align: center;
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-/* Formulário */
+/* Layout do formulário */
 .cadastro_form {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 1rem 1.5rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     color: #ECD8E0;
 }
 
-/* Labels */
+/* Labels com espaçamento */
 .cadastro_form label {
-    font-weight: 600;
-    text-align: right;
+    font-weight: bold;
 }
 
-/* Inputs */
+/* Inputs com visual moderno */
 .cadastro_form input {
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 2px solid #ECD8E0;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #333;
     font-size: 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
 }
 
@@ -75,47 +89,48 @@ main {
     color: #999;
 }
 
-/* Foco bonito */
+/* Foco com efeito */
 .cadastro_form input:focus {
-    border-color: #771127;
-    box-shadow: 0 0 4px rgba(119, 17, 39, 0.3);
+    border-color: #ECD8E0;
+    box-shadow: 0 0 8px rgba(236, 216, 224, 0.6);
     outline: none;
 }
 
 /* Centralizar botão */
 .centralizar_botao {
-    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
-/* Botão ação */
+/* Botão de ação mais estiloso */
 .botao_acao {
-    background-color: #ECD8E0;
+    background: linear-gradient(135deg, #ECD8E0, #D2B2C0);
     color: #771127;
     border: none;
     padding: 0.8rem 2rem;
-    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .botao_acao:hover {
     cursor: pointer;
-    background-color: #771127;
+    background: #771127;
     color: #ECD8E0;
-    transition: 0.7s;
-    border: 1px solid #ECD8E0;
+    transform: scale(1.05);
+    border: 2px solid #ECD8E0;
+    
 }
 
+/* Links mais elegantes */
 a[href*="painelAdministrador.php"] {
     display: inline-block;
-
     text-decoration: none;
     color: #ECD8E0;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 a[href*="painelAdministrador.php"]:hover {
@@ -124,15 +139,16 @@ a[href*="painelAdministrador.php"]:hover {
 
 /* Responsivo */
 @media (max-width: 600px) {
-    .cadastro_form {
-        grid-template-columns: 1fr;
+    .cadastro {
+        padding: 1.5rem;
     }
 
-    .cadastro_form label {
-        text-align: left;
+    .cadastro h2 {
+        font-size: 1.8rem;
     }
 
-    .centralizar_botao {
-        grid-column: auto;
+    .cadastro_form input {
+        font-size: 0.9rem;
+        padding: 0.7rem;
     }
 }
