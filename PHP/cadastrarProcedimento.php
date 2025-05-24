@@ -2,7 +2,6 @@
 session_start();
 require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
 
-// Verifica se o cliente está logado
 if (!isset($_SESSION['admin_logado'])) {
     header("Location: login.php");
     exit();
@@ -26,42 +25,43 @@ if (!isset($_SESSION['admin_logado'])) {
     </header>
 
     <main>
-        
         <div class="cadastro">
-
-
             <h2>Cadastrar Procedimento</h2>
             <form action="../conexao-php/processa_cadastrarProcedimento.php" method="POST" class="cadastro_form">
                 
                 <div class="nomeProcedimento">
-                    <label for="nome">Nome Do Procedimento:</label>
-                    <input type="text" name="nomeProcedimento" required>
+                    <label for="nome">Nome do Procedimento:</label>
+                    <input type="text" name="nomeProcedimento" required placeholder="Digite o nome">
                 </div>
 
                 <div class="campo">
-                    <label for="valorProcedimento">Valor do Procedimento</label>
-                    <input type="number" name="valorProcedimento" required> R$ </input>
+                    <label for="valorProcedimento">Valor do Procedimento:</label>
+                    <input type="number" name="valorProcedimento" step="0.01" required placeholder="Ex: 100.00"> R$
                 </div>
 
                 <div class="campo">
-                    <label for="tempoProcedimento">Tempo Gasto no Procedimento</label>
+                    <label for="tempoProcedimento">Tempo Gasto no Procedimento:</label>
                     <input type="time" name="tempoProcedimento" required>
                 </div>
 
                 <div class="centralizar_botao">
                     <button type="submit" class="botao_acao">Cadastrar</button>
                 </div>
-                <a href="painelAdministrador.php">Voltar a página</a>
             </form>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="painelAdministrador.php">Voltar à página</a>
+            </div>
+
             <?php
                 if (isset($_SESSION['mensagem_sucesso'])) {
-                    echo "<div style='color: white; font-weight: bold; text-align: center; margin-top: 15px;'>" . $_SESSION['mensagem_sucesso'] . "</div>";
+                    echo "<div class='mensagem-sucesso'>" . $_SESSION['mensagem_sucesso'] . "</div>";
                     unset($_SESSION['mensagem_sucesso']);
                 }
             ?>
         </div>
     </main>
-    
+
     <script src="../js/mascaras.js"></script>
     <script src="../js/validacao.js"></script>
 </body>

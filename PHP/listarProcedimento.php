@@ -33,10 +33,10 @@ try {
 <body>
 
 <section class="section-consultas">
-    <h2>Listar Todos consultas</h2>
+    <h2>Listar todos procedimentos</h2>
 
     <?php if (empty($consultas)): ?>
-        <p>Não há consultas adicionados.</p>
+        <p>Não há procedimentos adicionados.</p>
     <?php else: ?>
         <table>
             <thead>
@@ -58,7 +58,7 @@ try {
                     <td><?php echo $data->format('H:i');?></td>   
                     <td>
                         <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn" onclick="return confirm('Você deseja EDITAR esse procedimento?');">Editar</a>
-                        <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente EXCLUIR este consulta?');">Excluir</a>
+                        <a href="excluirProcedimento.php?id=<?= $consulta['procedimentoID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente EXCLUIR este consulta?');">Excluir</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
