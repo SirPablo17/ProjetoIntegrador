@@ -45,11 +45,13 @@ try {
             <td><?php echo 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
             <?php $data = new DateTime($consulta['dataConsulta']);?>
             <td><?php echo $data->format('d/m/Y H:i');?></td>
-            <td><?php $teste = $consulta['consultaConfirmada'];
-            if($teste == 0) 
-            {echo "Consulta não confirmada";} 
-            else {
+            <td><?php $status = $consulta['consultaConfirmada'];
+            if($status == 0){
+                echo "Consulta não confirmada";
+            } elseif ($status == 1){
                 echo "Consulta confirmada";
+            } elseif ($status == 2) {
+                echo "Consulta finalizada";
             }
             ?></td>
             <td>

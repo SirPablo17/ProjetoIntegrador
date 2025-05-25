@@ -51,10 +51,19 @@ try {
                     <td><?= $consulta['descricaoProcedimento']; ?></td>
                     <td><?= 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
                     <td><?= (new DateTime($consulta['dataConsulta']))->format('d/m/Y H:i'); ?></td>
-                    <td><?= $consulta['consultaConfirmada'] ? 'Consulta Confirmada' : 'Consulta não confirmada'; ?></td>
+                    <td><?php $status = $consulta['consultaConfirmada'];
+                    if($status == 0){
+                        echo "Consulta não confirmada";
+                    } elseif ($status == 1){
+                        echo "Consulta confirmada";
+                    } elseif ($status == 2) {
+                        echo "Consulta finalizada";
+                    }
+                    ?></td>
                     <td>
-                        <a href="#?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja APROVAR esta consulta?');">Aprovar</a>
-                        <a href="#?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja CANCELAR esta consulta?');">Cancelar</a>
+                        <a href="confirmarConsulta.php?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja CONFIRMAR esta consulta?');">Aprovar</a>
+                        <a href="cancelarConsulta.php?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja CANCELAR esta consulta?');">Cancelar</a>
+                        <a href="finalizarConsulta.php?id=<?= $consulta['consultaID']; ?>" class="action-btn" onclick="return confirm('Você deseja FINALIZAR esta consulta?');">Finalizar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
