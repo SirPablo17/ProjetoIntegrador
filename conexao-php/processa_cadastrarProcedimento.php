@@ -15,7 +15,7 @@ try {
     $tempo = $_POST['tempoProcedimento'];
 
 
-    $sql = "INSERT INTO tblProcedimentos (descrisaoProcedimento, valorProcedimento, tempoProcedimento)
+    $sql = "INSERT INTO tblProcedimentos (descricaoProcedimento, valorProcedimento, tempoProcedimento)
             VALUES (:nomeProcedimento, :valorProcedimento, :tempoProcedimento)";
 
     $query = $conn->prepare($sql);

@@ -52,7 +52,7 @@ try {
             <?php foreach ($consultas as $consulta): ?>
                 <tr>
                     <td><?= $consulta['procedimentoID']; ?></td>
-                    <td><?= $consulta['descrisaoProcedimento']; ?></td>
+                    <td><?= $consulta['descricaoProcedimento']; ?></td>
                     <td><?= 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
                     <?php $data = new DateTime($consulta['tempoProcedimento']);?>
                     <td><?php echo $data->format('H:i');?></td>   

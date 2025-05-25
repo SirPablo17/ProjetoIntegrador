@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_logado']) || !isset($_SESSION['admin_id'])) {
 
 try {
     // Seleciona as consultas com os procedimentos associados
-    $stmt = $conn->prepare("SELECT c.consultaID, tc.usuarioID, tc.nome, c.dataConsulta, p.descrisaoProcedimento, p.valorProcedimento, c.consultaConfirmada
+    $stmt = $conn->prepare("SELECT c.consultaID, tc.usuarioID, tc.nome, c.dataConsulta, p.descricaoProcedimento, p.valorProcedimento, c.consultaConfirmada
                             FROM tblConsulta c
                             LEFT JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
                             LEFT JOIN tblProcedimentos p ON cp.procedimentoID = p.procedimentoID
@@ -48,7 +48,7 @@ try {
                     <td><?= $consulta['consultaID']; ?></td>
                     <td><?= $consulta['usuarioID']; ?></td>
                     <td><?= $consulta['nome']; ?></td>
-                    <td><?= $consulta['descrisaoProcedimento']; ?></td>
+                    <td><?= $consulta['descricaoProcedimento']; ?></td>
                     <td><?= 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
                     <td><?= (new DateTime($consulta['dataConsulta']))->format('d/m/Y H:i'); ?></td>
                     <td><?= $consulta['consultaConfirmada'] ? 'Consulta Confirmada' : 'Consulta não confirmada'; ?></td>

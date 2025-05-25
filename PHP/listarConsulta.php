@@ -41,7 +41,7 @@ try {
     <?php foreach ($consultas as $consulta): ?>
         <tr>
             <td><?php echo $consulta['consultaID']; ?></td>
-            <td><?php echo htmlspecialchars($consulta['descrisaoProcedimento']); ?></td>
+            <td><?php echo htmlspecialchars($consulta['descricaoProcedimento']); ?></td>
             <td><?php echo 'R$ ' . number_format($consulta['valorProcedimento'], 2, ',', '.'); ?></td>
             <?php $data = new DateTime($consulta['dataConsulta']);?>
             <td><?php echo $data->format('d/m/Y H:i');?></td>
