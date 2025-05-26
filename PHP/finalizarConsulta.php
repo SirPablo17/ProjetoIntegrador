@@ -18,7 +18,7 @@ if (!$id) {
 
 try {
     // 1️⃣ Consulta finalizada = 2
-    $stmtProc = $conn->prepare("UPDATE tblConsulta SET consultaConfirmada = 2 WHERE consultaID = :id");
+    $stmtProc = $conn->prepare("UPDATE tblConsulta SET consultaConfirmada = 3 WHERE consultaID = :id");
     $stmtProc->bindParam(':id', $id, PDO::PARAM_INT);
     $stmtProc->execute();
 

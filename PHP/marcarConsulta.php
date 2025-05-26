@@ -10,7 +10,7 @@ if (!isset($_SESSION['cliente_logado'])) {
 
 // Buscar procedimentos disponíveis no banco
 try {
-    $stmt = $conn->query("SELECT procedimentoID, descrisaoProcedimento, valorProcedimento FROM tblProcedimentos");
+    $stmt = $conn->query("SELECT procedimentoID, descricaoProcedimento, valorProcedimento FROM tblProcedimentos");
     $procedimentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "Erro ao buscar procedimentos: " . $e->getMessage();
@@ -41,7 +41,7 @@ try {
 
             <form action="../conexao-php/processa_marcarConsulta.php" method="POST">
                 <label for="dataConsulta">Data da Consulta:</label>
-                <input type="date" id="dataConsulta" name="dataConsulta" required>
+                <input type="date" id="dataConsulta" name="dataConsulta" min="<?php echo date('Y-m-d'); ?>" required>
 
                 <label for="horarioConsulta">Hora da Consulta:</label>
                 <input type="time" id="horarioConsulta" name="horarioConsulta" required>
@@ -52,7 +52,7 @@ try {
                     <?php foreach ($procedimentos as $proc): ?>
                     <label>
                         <input type="checkbox" name="procedimentos[]" value="<?php echo $proc['procedimentoID']; ?>">
-                        <?php echo htmlspecialchars($proc['descrisaoProcedimento']); ?> — R$
+                        <?php echo htmlspecialchars($proc['descricaoProcedimento']); ?> — R$
                         <?php echo number_format($proc['valorProcedimento'], 2, ',', '.'); ?>
                     </label>
                     <?php endforeach; ?>

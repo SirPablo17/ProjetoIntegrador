@@ -35,6 +35,17 @@ if(!isset($_SESSION['cliente_logado'])){
     </div>
 </div>
 
+<script>
+function abrirModal(consultaID) {
+  document.getElementById('modal-cancelar').style.display = 'block';
+  document.getElementById('consultaID').value = consultaID;
+}
+
+function fecharModal() {
+  document.getElementById('modal-cancelar').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
 

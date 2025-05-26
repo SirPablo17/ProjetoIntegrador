@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin_logado'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/cadastroAdm.css">
+    <link rel="stylesheet" href="../style/cadastroProcedimento.css">
     <link rel="stylesheet" href="../style/global.css">
     <title>Cadastro</title>
 </head>

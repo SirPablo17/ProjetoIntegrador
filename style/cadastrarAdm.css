@@ -1,6 +1,14 @@
 @import url("style.css");
 
-/* Centralização do main */
+/* ---------- Header ---------- */
+header {
+    background-color: #771127;
+    padding: 1.5rem;
+    text-align: center;
+    color: #ECD8E0;
+}
+
+/* ---------- Main ---------- */
 main {
     display: flex;
     justify-content: center;
@@ -8,18 +16,18 @@ main {
     padding: 2rem;
 }
 
-/* Container do formulário */
+/* ---------- Form Container ---------- */
 .cadastro {
-    max-width: 600px;
     width: 100%;
+    max-width: 600px;
+    margin-top: 5rem;
     background-color: #771127;
+    padding: 2rem 2.5rem;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-    padding: 2rem 2.5rem;
-    margin-top: 5rem;
 }
 
-/* Título */
+/* ---------- Title ---------- */
 .cadastro h2 {
     color: #ECD8E0;
     text-align: center;
@@ -27,7 +35,7 @@ main {
     font-size: 1.8rem;
 }
 
-/* Formulário */
+/* ---------- Form Grid ---------- */
 .cadastro_form {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -36,37 +44,35 @@ main {
     color: #ECD8E0;
 }
 
-/* Labels */
+/* ---------- Labels ---------- */
 .cadastro_form label {
     font-weight: 600;
     text-align: right;
 }
 
-/* Inputs */
+/* ---------- Inputs ---------- */
 .cadastro_form input {
+    width: 100%;
     padding: 0.7rem 1rem;
+    font-size: 1rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #fff;
     color: #333;
-    font-size: 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    width: 100%;
 }
 
-/* Placeholder suave */
 .cadastro_form input::placeholder {
     color: #999;
 }
 
-/* Foco bonito */
 .cadastro_form input:focus {
     border-color: #771127;
     box-shadow: 0 0 4px rgba(119, 17, 39, 0.3);
     outline: none;
 }
 
-/* Centralizar botão */
+/* ---------- Button Container ---------- */
 .centralizar_botao {
     grid-column: 1 / -1;
     display: flex;
@@ -74,39 +80,40 @@ main {
     margin-top: 1rem;
 }
 
-/* Botão ação */
+/* ---------- Action Button ---------- */
 .botao_acao {
     background-color: #ECD8E0;
     color: #771127;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    font-size: 1rem;
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    cursor: pointer;
 }
 
 .botao_acao:hover {
-    cursor: pointer;
     background-color: #771127;
     color: #ECD8E0;
-    transition: 0.7s;
     border: 1px solid #ECD8E0;
 }
 
-a[href*="painelAdministrador.php"] {
+/* ---------- Voltar Button ---------- */
+.btn-voltar {
     display: inline-block;
-    margin-top: 1.5rem;
+    margin-top: 0.2rem;
     text-decoration: none;
-    color: #771127;
+    color: white;
     font-weight: 600;
+    transition: text-decoration 0.3s;
 }
 
-a[href*="painelAdministrador.php"]:hover {
+.btn-voltar:hover {
     text-decoration: underline;
 }
 
-/* Responsivo */
+/* ---------- Responsive Design ---------- */
 @media (max-width: 600px) {
     .cadastro_form {
         grid-template-columns: 1fr;

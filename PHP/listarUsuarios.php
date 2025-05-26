@@ -40,7 +40,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>Listar Usuários</title>
-    <link rel="stylesheet" href="../style/listarConsultas.css">
+    <link rel="stylesheet" href="../style/listarUsuario.css">
     <link rel="stylesheet" href="../style/global.css">
 <script>
 function confirmDeletion() {
@@ -100,9 +100,12 @@ function confirmEdition(){
     <?php endforeach; ?>
 </table>
     <br>
+    <a class="btn-export" href="exportarUsuarios.php">Exportar dados em Excel</a>
+    <br><br>
     <a class="btn-voltar" href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
     <script src="../js/mascaras.js"></script>
-
 </section>
+
+
 </body>
 </html>

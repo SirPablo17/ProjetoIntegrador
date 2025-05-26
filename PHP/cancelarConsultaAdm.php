@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['cliente_logado'])) {
+if (!isset($_SESSION['admin_logado'])) {
     header("Location: login.php");
     exit();
 }
@@ -64,13 +64,13 @@ if (!$consultaID) {
         <input type="hidden" name="consultaID" value="<?php echo htmlspecialchars($consultaID); ?>">
 
         <label>
-            <input type="radio" name="motivos" value="Imprevisto pessoal" required>
-            Imprevisto pessoal
+            <input type="radio" name="motivos" value="Cliente não compareceu" required>
+            Cliente não compareceu
         </label>
 
         <label>
             <input type="radio" name="motivos" value="Não quero mais realizar a consulta">
-            Não quero mais realizar a consulta
+            Cliente Informou que desistiu da consulta
         </label>
 
         <label>

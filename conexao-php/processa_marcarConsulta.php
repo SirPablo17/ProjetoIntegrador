@@ -11,7 +11,15 @@ if (!isset($_SESSION['cliente_logado'])) {
 // Dados do formulário
 $dataConsulta = $_POST['dataConsulta']; // formato yyyy-mm-dd
 $horarioConsulta = $_POST['horarioConsulta']; // formato HH:MM
-$procedimentosSelecionados = $_POST['procedimentos']; // array de procedimentosID
+$procedimentosSelecionados = $_POST['procedimentos'] ?? []; // array de procedimentosID
+
+// ✅ Validação: impede seguir sem selecionar procedimentos
+if (empty($procedimentosSelecionados)) {
+    $_SESSION['mensagem_erro'] = "Por favor, selecione ao menos um procedimento para marcar a consulta.";
+    header('Location: /Projeto-PI---TSI---2--semestre-/PHP/marcarConsulta.php');
+    exit;
+}
+
 
 $usuarioID = $_SESSION['cliente_id'];
 
@@ -47,7 +55,7 @@ try {
     }
 
     // 3️⃣ Insere a consulta na tblConsulta
-    $sqlConsulta = "INSERT INTO tblConsulta (usuarioID, valorConsulta, dataConsulta, consultaConfirmada) VALUES (:usuarioID, :valorConsulta, :dataConsulta, 0)";
+    $sqlConsulta = "INSERT INTO tblConsulta (usuarioID, valorConsulta, dataConsulta, consultaConfirmada) VALUES (:usuarioID, :valorConsulta, :dataConsulta, 4)";
     $stmtConsulta = $conn->prepare($sqlConsulta);
     $stmtConsulta->bindParam(':usuarioID', $usuarioID, PDO::PARAM_INT);
     $stmtConsulta->bindParam(':valorConsulta', $valorTotal);

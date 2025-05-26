@@ -12,7 +12,7 @@ $clienteID = $_SESSION['cliente_id'];
 
 try {
     // Seleciona as consultas desse cliente com os procedimentos associados
-    $stmt = $conn->prepare("SELECT c.consultaID, c.dataConsulta, p.descrisaoProcedimento, p.valorProcedimento, c.consultaConfirmada
+    $stmt = $conn->prepare("SELECT c.consultaID, c.dataConsulta, p.descricaoProcedimento, p.valorProcedimento, c.consultaConfirmada
                             FROM tblConsulta c
                             LEFT JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
                             LEFT JOIN tblProcedimentos p ON cp.procedimentoID = p.procedimentoID
@@ -24,6 +24,8 @@ try {
     echo "<p style='color:red;'>Erro ao listar consultas: " . $e->getMessage() . "</p>";
 }
 ?>
+
+<h2>Minhas Consultas</h2>
 
 <section class="listar-consultas">
 <?php if (empty($consultas)): ?>
@@ -51,15 +53,32 @@ try {
             } elseif ($status == 1){
                 echo "Consulta confirmada";
             } elseif ($status == 2) {
-                echo "Consulta finalizada";
+                echo "Consulta cancelada";
+            } else {
+                echo "consulta finalizada";
             }
             ?></td>
             <td>
-                <a href="#?id=<?php echo $consulta['consultaID']; ?>" class="action-btn">Editar</a>
-                <a href="excluirConsulta.php?id=<?php echo $consulta['consultaID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente cancelar esta consulta?');">Cancelar</a>
+                <a href="cancelarConsulta.php?id=<?php echo $consulta['consultaID']; ?>" 
+                class="action-btn delete-btn" 
+                target="_blank"
+                onclick="return abrirPopup(this.href);">
+                Cancelar
+                </a>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
 <?php endif; ?>
 </section>
+
+<div class="excel">
+<a class="btn-export" href="exportarConsultasCliente.php">Exportar dados em Excel</a>
+</div>
+
+<script>
+function abrirPopup(url) {
+    window.open(url, 'popupCancelar', 'width=500,height=500');
+    return false; // impede o link de seguir normalmente
+}
+</script>

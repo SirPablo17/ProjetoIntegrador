@@ -24,7 +24,7 @@
 
 .section-consultas th,
 .section-consultas td {
-    padding: 0.9rem 1rem;
+    padding: 1rem 0.5rem;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
@@ -41,10 +41,9 @@
 /* Ações */
 .section-consultas .action-btn {
     text-decoration: none;
-    padding: 0.4rem 0.8rem;
     border-radius: 6px;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    margin: 0.5rem;
     background-color: #ECD8E0;
     color: #771127;
     border: 1px solid #771127;
@@ -54,6 +53,7 @@
 .section-consultas .action-btn:hover {
     background-color: #771127;
     color: #ECD8E0;
+    cursor: pointer;
 }
 
 /* Botão de exclusão */
@@ -95,5 +95,21 @@
 }
 
 .btn-voltar:hover {
+    text-decoration: underline;
+}
+
+.excel {
+    margin-top: 1rem;
+} 
+
+.excel a{
+    display: inline-block;
+    margin-top: 0.2rem;
+    text-decoration: none;
+    color: #771127;
+    font-weight: 600;
+}
+
+.excel a:hover {
     text-decoration: underline;
 }
