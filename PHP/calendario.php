@@ -72,10 +72,10 @@ if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
             <input type="text" placeholder="Nome da Consulta" class="event-name" />
           </div>
           <div class="add-event-input">
-            <input type="text" placeholder="Event Time From" class="event-time-from" />
+            <input type="text" placeholder="Event Time From" class="event-time-from" id="event-time-from" />
           </div>
           <div class="add-event-input">
-            <input type="text" placeholder="Event Time To" class="event-time-to" />
+            <input type="text" placeholder="Event Time To" class="event-time-to" id="event-time-to" />
           </div>
         </div>
         <div class="add-event-footer">

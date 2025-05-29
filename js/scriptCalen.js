@@ -337,7 +337,6 @@ addEventFrom.addEventListener("input", (e) => {
     addEventFrom.value = addEventFrom.value.slice(0, 5);
   }
 });
-
 addEventTo.addEventListener("input", (e) => {
   addEventTo.value = addEventTo.value.replace(/[^0-9:]/g, "");
   if (addEventTo.value.length === 2) {
@@ -347,6 +346,15 @@ addEventTo.addEventListener("input", (e) => {
     addEventTo.value = addEventTo.value.slice(0, 5);
   }
 });
+
+let time2 = document.getElementById("event-time-to").value;
+let time1 = document.getElementById("event-time-from").value;
+console.log(time1);
+document.getElementById("event-time-to").addEventListener("input", function() {
+  console.log(time1)
+  document.getElementById("event-time-to").time1;
+});
+
 
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
