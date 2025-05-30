@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once ('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
@@ -6,6 +5,16 @@ require_once ('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conex
 // Verifica se o cliente está logado
 if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
     header('Location: login.php');
+    exit;
+}
+
+// Buscar procedimentos disponíveis no banco
+try {
+  $stmt = $conn->prepare("SELECT * FROM tblProcedimentos");
+  $stmt->execute();
+  $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Erro ao buscar procedimentos: " . $e->getMessage();
     exit;
 }
 ?>
@@ -61,37 +70,47 @@ if (!isset($_SESSION['admin_logado']) && !isset($_SESSION['cliente_logado'])) {
         <div class="event-date">12 de Dezembro de 2022</div>
       </div>
       <div class="events"></div>
-      
+
       <div class="add-event-wrapper">
         <div class="add-event-header">
-          <div class="title">Adicionar Evento</div>
+          <div class="title">Marcar consulta</div>
           <i class="fas fa-times close"></i>
         </div>
-        <div class="add-event-body">
-          <div class="add-event-input">
-            <input type="text" placeholder="Nome da Consulta" class="event-name" />
+
+
+        <form action="../conexao-php/processa_marcarConsulta.php">
+          <div class="add-event-body">
+            <div class="add-event-input">
+              <input type="date" placeholder="Data da Consulta" class="event-name" min="<?php echo date('Y-m-d'); ?>" required/>
+            </div>
+            <div class="add-event-input">
+              <input type="time" placeholder="Event Time To" class="event-time-to" id="event-time-to" />
+            </div>
+            <div class="add-event-input">
+              <select placeholder="Event Time From" class="event-time-from" id="event-time-from">
+
+              <option value="consultas" <?php echo ($consultas['descricaoProcedimento']=='consultas' ) ? 'selected' : '' ; ?>>
+              </option>
+
+              </select>
+            </div>
+
           </div>
-          <div class="add-event-input">
-            <input type="text" placeholder="Event Time From" class="event-time-from" id="event-time-from" />
+          <div class="add-event-footer">
+            <button class="add-event-btn" type="submit">Marcar Consulta</button>
           </div>
-          <div class="add-event-input">
-            <input type="text" placeholder="Event Time To" class="event-time-to" id="event-time-to" />
-          </div>
-        </div>
-        <div class="add-event-footer">
-          <button class="add-event-btn">Adicionar Evento</button>
-        </div>
-       
+        </form>
+
       </div>
       <div class="botoes__finais">
-      <a href="painelCliente.php" class="sair">Voltar</a>
-      <button class="add-event">
-        <i class="fas fa-plus"></i>
-      </button>
-    </div>
+        <a href="painelCliente.php" class="sair">Voltar</a>
+        <button class="add-event">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
     </div>
 
-    
+
 
   </div>
   <script src="../js/scriptCalen.js"></script>

@@ -35,6 +35,6 @@ try {
     echo "Exportação concluída com sucesso: <a href='$nomeArquivo'>Download do CSV</a>";
 
 } catch (PDOException $e) {
-    echo "Erro ao exportar: " . $e->getMessage();
+    echo "Erro ao exportar: ".$e->getMessage();
 }
 ?>
