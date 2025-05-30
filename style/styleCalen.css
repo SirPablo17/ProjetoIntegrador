@@ -411,6 +411,7 @@ visibility: hidden;
   background-color: #fff;
   transform: translateX(-50%);
   transition: max-height 0.5s ease;
+  margin-bottom: 10px;
 }
 .add-event-wrapper.active {
   max-height: 300px;
@@ -485,15 +486,16 @@ visibility: hidden;
   outline: none;
   border: none;
   color: #fff;
-  background-color: #fff;
+  background-color: #cccccc;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px 10px;
   border: 1px solid #fff;
 }
 .add-event-footer .add-event-btn:hover {
-  background-color: transparent;
-  color: var(--primary-clr);
+  color: #fff;
+  background-color: var(--primary-clr);
+  transition: background-color 0.5s;
 }
 
 /* media queries */
