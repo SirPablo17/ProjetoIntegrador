@@ -50,7 +50,7 @@ if (!isset($_SESSION['admin_logado'])) {
             </form>
 
             <div style="text-align: center; margin-top: 1rem;">
-                <a href="painelAdministrador.php">Voltar à página</a>
+                <a href="painelAdministrador.php">Voltar</a>
             </div>
 
             <?php

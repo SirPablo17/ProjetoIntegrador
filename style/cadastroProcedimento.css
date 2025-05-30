@@ -35,7 +35,7 @@ main {
 /* Container do formulário com suavidade */
 .cadastro {
     max-width: 650px;
-    height: 525px;
+    height: 540px;
     width: 100%;
     background: linear-gradient(135deg, #771127, #51101C);
     border-radius: 16px;
@@ -125,6 +125,7 @@ main {
     
 }
 
+
 /* Links mais elegantes */
 a[href*="painelAdministrador.php"] {
     display: inline-block;
@@ -136,6 +137,18 @@ a[href*="painelAdministrador.php"] {
 a[href*="painelAdministrador.php"]:hover {
     text-decoration: underline;
 }
+
+a[href*="listarProcedimento.php"] {
+    display: inline-block;
+    text-decoration: none;
+    color: #ECD8E0;
+    font-weight: bold;
+}
+
+a[href*="listarProcedimento.php"]:hover {
+    text-decoration: underline;
+}
+
 
 /* Responsivo */
 @media (max-width: 600px) {

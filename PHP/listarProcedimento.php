@@ -57,7 +57,7 @@ try {
                     <?php $data = new DateTime($consulta['tempoProcedimento']);?>
                     <td><?php echo $data->format('H:i');?></td>   
                     <td>
-                        <a href="#?id=<?= $consulta['procedimentoID']; ?>" class="action-btn" onclick="return confirm('Você deseja EDITAR esse procedimento?');">Editar</a>
+                        <a href="editarProcedimento.php?id=<?= $consulta['procedimentoID']; ?>" class="action-btn" onclick="return confirm('Você deseja EDITAR esse procedimento?');">Editar</a>
                         <a href="excluirProcedimento.php?id=<?= $consulta['procedimentoID']; ?>" class="action-btn delete-btn" onclick="return confirm('Deseja realmente EXCLUIR este consulta?');">Excluir</a>
                     </td>
                 </tr>
