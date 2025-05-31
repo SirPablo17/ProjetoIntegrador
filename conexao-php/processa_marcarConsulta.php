@@ -55,7 +55,7 @@ try {
     }
 
     // 3️⃣ Insere a consulta na tblConsulta
-    $sqlConsulta = "INSERT INTO tblConsulta (usuarioID, valorConsulta, dataConsulta, consultaConfirmada) VALUES (:usuarioID, :valorConsulta, :dataConsulta, 4)";
+    $sqlConsulta = "INSERT INTO tblConsulta (usuarioID, valorConsulta, dataConsulta, consultaConfirmada) VALUES (:usuarioID, :valorConsulta, :dataConsulta, 0)";
     $stmtConsulta = $conn->prepare($sqlConsulta);
     $stmtConsulta->bindParam(':usuarioID', $usuarioID, PDO::PARAM_INT);
     $stmtConsulta->bindParam(':valorConsulta', $valorTotal);

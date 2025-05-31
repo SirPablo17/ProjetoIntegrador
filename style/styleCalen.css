@@ -404,7 +404,8 @@ visibility: hidden;
   position: absolute;
   bottom: 100px;
   left: 50%;
-  width: 90%;
+  height: 45%;
+  width: 100%;
   max-height: 0;
   overflow: hidden;
   border-radius: 5px;
@@ -414,7 +415,7 @@ visibility: hidden;
   margin-bottom: 10px;
 }
 .add-event-wrapper.active {
-  max-height: 300px;
+  max-height: 100%;
 }
 .add-event-header {
   width: 100%;
@@ -447,11 +448,11 @@ visibility: hidden;
 }
 .add-event-body .add-event-input {
   width: 100%;
-  height: 40px;
+  height: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
 }
 .add-event-body .add-event-input input {
   width: 100%;
@@ -473,6 +474,27 @@ visibility: hidden;
 .add-event-body .add-event-input input:focus::placeholder {
   color: var(--primary-clr);
 }
+
+.add-event-body .add-event-input select {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #373c4f;
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+  background-color: white;
+  resize: vertical;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.add-event-body .add-event-input select:focus {
+  border-bottom: 1px solid var(--primary-clr);
+}
+
 .add-event-footer {
   display: flex;
   align-items: center;
@@ -496,6 +518,16 @@ visibility: hidden;
   color: #fff;
   background-color: var(--primary-clr);
   transition: background-color 0.5s;
+}
+
+select[multiple] {
+  height: 100px;
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical;
+  overflow-y: auto;
 }
 
 /* media queries */

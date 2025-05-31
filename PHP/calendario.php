@@ -76,25 +76,25 @@ try {
           <div class="title">Marcar consulta</div>
           <i class="fas fa-times close"></i>
         </div>
-
-
-        <form action="../conexao-php/processa_marcarConsulta.php">
+        <form action="../conexao-php/processa_marcarConsultaCalendario.php" method="POST">
           <div class="add-event-body">
             <div class="add-event-input">
-              <input type="date" placeholder="Data da Consulta" class="event-name" min="<?php echo date('Y-m-d'); ?>" required/>
+              <input type="date" name="dataConsulta" placeholder="Data da Consulta" min="<?php echo date('Y-m-d'); ?>"
+                required />
             </div>
             <div class="add-event-input">
-              <input type="time" placeholder="Event Time To" class="event-time-to" id="event-time-to" />
+              <input type="time" name="horarioConsulta" placeholder="Horário da Consulta" required />
             </div>
             <div class="add-event-input">
-              <select placeholder="Event Time From" class="event-time-from" id="event-time-from">
-
-              <option value="consultas" <?php echo ($consultas['descricaoProcedimento']=='consultas' ) ? 'selected' : '' ; ?>>
-              </option>
-
+              <select name="procedimentos[]" multiple required>
+                <option disabled>Selecione os procedimentos</option>
+                <?php foreach ($consultas as $proc): ?>
+                <option value="<?= htmlspecialchars($proc['procedimentoID']) ?>">
+                  <?= htmlspecialchars($proc['descricaoProcedimento']) ?>
+                </option>
+                <?php endforeach; ?>
               </select>
             </div>
-
           </div>
           <div class="add-event-footer">
             <button class="add-event-btn" type="submit">Marcar Consulta</button>
@@ -114,6 +114,7 @@ try {
 
   </div>
   <script src="../js/scriptCalen.js"></script>
+  <script src="js/main.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>
