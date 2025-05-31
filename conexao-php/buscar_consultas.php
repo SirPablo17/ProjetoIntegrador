@@ -18,7 +18,7 @@ try {
     $usuarioID = (int)$usuarioID;
 
     // Consulta: pega consultas SOMENTE do usuário logado
-    $sql = "SELECT tu.nome, tc.valorConsulta, tc.dataConsulta, tp.descrisaoProcedimento
+    $sql = "SELECT tu.nome, tc.valorConsulta, tc.dataConsulta, tp.descricaoProcedimento
             FROM tblConsulta tc
             INNER JOIN tblConsultaProcedimento tpp ON tpp.consultaID = tc.consultaID
             INNER JOIN tblProcedimentos tp ON tp.procedimentoID = tpp.procedimentoID
@@ -54,14 +54,14 @@ try {
             ];
         }
 
-        $tituloEvento = $consulta['nome'] . ' - ' . $consulta['descrisaoProcedimento'];
+        $tituloEvento = $consulta['nome'] . ' - ' . $consulta['descricaoProcedimento'];
         $valor = 'R$ ' . number_format($consulta['valorConsulta'], 2, ',', '.');
 
         $eventos[$key]['events'][] = [
             'title' => $tituloEvento,
             'time' => $hora,
             'valor' => $valor,
-            'procedimento' => $consulta['descrisaoProcedimento']
+            'procedimento' => $consulta['descricaoProcedimento']
         ];
     }
 

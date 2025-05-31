@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  carregarConsultasDoBanco();
+});
+
 const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),
   daysContainer = document.querySelector(".days"),
@@ -559,6 +563,7 @@ function carregarConsultasDoBanco() {
     .catch(error => console.error('Erro:', error));
 }
 
+
 carregarConsultasDoBanco();
 
 function logout() {
@@ -571,5 +576,5 @@ function logout() {
   sessionStorage.removeItem('userId');
 
   // Redireciona para a página de login
-  window.location.href = 'login.html';
+  window.location.href = 'login.php';
 }
