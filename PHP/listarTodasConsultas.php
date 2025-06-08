@@ -25,6 +25,11 @@ try {
 <section class="listar-consultas">
     <h2>Listar Todas Consultas</h2>
 
+    <div class="box-search"> 
+	    <input type="search" class="form-control" placeholder= "Pesquisar" id="pesquisar">
+	    <button onclick="searchData()" class="btn">Pesquisar</button>
+    </div>
+
     <?php if (empty($consultas)): ?>
     <p>Não há consultas agendadas.</p>
     <?php else: ?>
@@ -97,6 +102,18 @@ try {
 </div>
 
 <script>
+
+var search = document.getElementById('pesquisar);
+
+search.addEventListener("keydown", function(event){
+	if(event.key === "Enter"){
+		searchData();}
+});
+
+function searchData(){
+	window.location = 'link' + search.value
+};
+
 function abrirPopup(url) {
     window.open(url, 'popupCancelar', 'width=500,height=500');
     return false; // impede o link de seguir normalmente
