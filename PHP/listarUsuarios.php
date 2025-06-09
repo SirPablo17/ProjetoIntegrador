@@ -62,7 +62,10 @@ function confirmEdition(){
         <th>Código</th>
         <th>Tipo de Permissões</th>
         <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
         <th>CPF</th>
+        <th>Data de nascimento</th>
         <th>Ativo</th>
         <th>Ações</th>
         <!-- <th>Imagem</th> -->
@@ -72,7 +75,10 @@ function confirmEdition(){
         <td><?php echo $adm['usuarioID']; ?></td>
         <td><?php echo $adm['roleUsuario']; ?></td>
         <td><?php echo $adm['nome']; ?></td>
+        <td><?php echo $adm['emailUsuario']; ?></td>
+        <td class ="tel"><?php echo $adm['telefoneUsuario']; ?></td>
         <td class ="cpf"><?php echo $adm['CPF']; ?></td>
+        <td> <?php echo $adm['dataNascimento']; ?></td>
         <td><?php echo ($adm['usuarioAtivoInativo'] == 1 ? 'Sim' : 'Não'); ?></td>
         
         <td>
