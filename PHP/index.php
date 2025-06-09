@@ -62,26 +62,21 @@
                         <div class="especialidadesBox">
                             <i class="bi bi-clipboard-heart-fill"></i>
                             <h3>Tratamentos Faciais</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium vel totam, saepe
-                                repellendus similique dolorum repudiandae quisquam sit assumenda.</p>
+                            <p>Descubra o poder do cuidado com a pele. Nossos tratamentos faciais são pensados para limpar profundamente, revitalizar e devolver o brilho natural do seu rosto. Ideal para quem busca uma pele saudável, hidratada e rejuvenescida..</p>
                         </div>
                         <div class="flex">
                             <div class="especialidadesBox">
                                 <i class="bi bi-clipboard-heart-fill"></i>
-                                <h3>Tratamentos Faciais</h3>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium vel totam,
-                                    saepe
-                                    repellendus similique dolorum repudiandae quisquam sit assumenda.</p>
+                                <h3>Peeling Químico</h3>
+                                <p>Renove sua pele com nosso peeling químico. Essa técnica promove a esfoliação das camadas superficiais, estimulando a produção de colágeno e melhorando a textura, manchas e linhas finas. Resultados visíveis desde a primeira sessão.</p>
                             </div>
-                            <div class="flex">
-                                <div class="especialidadesBox">
-                                    <i class="bi bi-clipboard-heart-fill"></i>
-                                    <h3>Tratamentos Faciais</h3>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium vel totam,
-                                        saepe
-                                        repellendus similique dolorum repudiandae quisquam sit assumenda.</p>
-                                </div>
+                        <div class="flex">
+                            <div class="especialidadesBox">
+                                <i class="bi bi-clipboard-heart-fill"></i>
+                                <h3>Hidratação Profunda</h3>
+                                <p>Restaure a vitalidade da sua pele com uma hidratação intensa. Indicada especialmente para peles secas ou sensibilizadas, essa técnica devolve a maciez, elasticidade e luminosidade do rosto, proporcionando conforto imediato.</p>
                             </div>
+                        </div>
                         </div>
             </section>
 
@@ -89,10 +84,8 @@
                 <div class="interface">
                     <h2>SOBRE MIM</h2>
                     <div class="conteudoSobreMim">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloribus consequuntur
-                            voluptas odio similique ipsum vitae? Tenetur laboriosam aliquid sit deleniti commodi?
-                            Neque
-                            in quos sapiente necessitatibus assumenda dolore aut.</p>
+                        <p>Olá! Meu nome é Daiane Carvalho e sou apaixonada por estética e bem-estar. Com anos de experiência no ramo, meu compromisso é cuidar de cada cliente com carinho, atenção e profissionalismo. Acredito que a beleza vai além da aparência — ela começa com autoestima e cuidado interior.
+                        Aqui no meu centro estético, cada atendimento é personalizado, feito com amor e focado nos melhores resultados para você se sentir bem, confiante e radiante todos os dias.</p>
                         <div> <img src="../img/LogoPNG.png" height="300"></div>
                     </div>
 

@@ -247,6 +247,7 @@ section #topoDoSite {
 .conteudoSobreMim p {
     max-width: 600px;
     font-size: 30px;
+    text-align:justify;
     color: #771127;
 }
 
