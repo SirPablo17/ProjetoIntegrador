@@ -14,6 +14,10 @@ try {
     $senha = $_POST['usuarioSenha']; // Estou assumindo que aqui é a senha
     $endereco = $_POST['enderecoUsuario'];
 
+    $cpf = preg_replace('/[^0-9]/', '', $cpf);
+    $telefone = preg_replace('/[^0-9]/', '', $telefone);
+    $cep = preg_replace('/[^0-9]/', '', $cep);
+
     // Definindo a role, status e endereço (exemplo de valor padrão, ajuste se necessário)
     $role = 'adm';
     $status = 1;
