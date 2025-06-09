@@ -1,0 +1,21 @@
+NomeUsuario,CPF,consultaID,dataConsulta,valorConsulta,consultaConfirmada,descricaoProcedimento,valorProcedimento,motivoCancelamento
+Teste2,4848484848,15,"2025-06-30 22:00:00.000",150.00,0,"Limpeza Facial",195.00,
+"Pablo Nascimento do Rosario",99999999999,19,"2025-06-13 13:00:00.000",195.00,0,"Limpeza Facial",195.00,
+"ISAQUE CARLOS DA SILVA MELO",54805516801,21,"2025-06-10 12:30:00.000",200.00,1,"Peeling Químico",200.00,
+"ISAQUE CARLOS DA SILVA MELO",54805516801,20,"2025-06-09 12:30:00.000",195.00,1,"Limpeza Facial",195.00,
+"Pablo Nascimento do Rosario",99999999999,18,"2025-06-06 13:00:00.000",3395.00,0,"Limpeza Facial",195.00,
+"Pablo Nascimento do Rosario",99999999999,18,"2025-06-06 13:00:00.000",3395.00,0,"Peeling Químico",200.00,
+"Pablo Nascimento do Rosario",99999999999,18,"2025-06-06 13:00:00.000",3395.00,0,Rinoplastia,3000.00,
+"Pablo Nascimento do Rosario",99999999999,17,"2025-06-01 13:00:00.000",515.00,2,"Limpeza Facial",195.00,"Não quero mais realizar a consulta"
+"Pablo Nascimento do Rosario",99999999999,17,"2025-06-01 13:00:00.000",515.00,2,"Peeling Químico",200.00,"Não quero mais realizar a consulta"
+"Pablo Nascimento do Rosario",99999999999,17,"2025-06-01 13:00:00.000",515.00,2,"Hidratação Facial",120.00,"Não quero mais realizar a consulta"
+"Pablo Nascimento do Rosario",99999999999,16,"2025-05-31 18:00:00.000",195.00,2,"Limpeza Facial",195.00,"Imprevisto pessoal"
+Teste2,4848484848,14,"2025-05-30 22:00:00.000",150.00,0,"Limpeza Facial",195.00,
+Teste2,4848484848,13,"2025-05-27 20:00:00.000",150.00,0,"Limpeza Facial",195.00,
+"Pablo Nascimento do Rosario",99999999999,10,"2025-05-26 21:00:00.000",150.00,1,"Limpeza Facial",195.00,
+Teste2,4848484848,12,"2025-05-26 20:00:00.000",350.00,0,"Limpeza Facial",195.00,
+Teste2,4848484848,12,"2025-05-26 20:00:00.000",350.00,0,"Peeling Químico",200.00,
+Teste2,4848484848,11,"2025-05-26 17:00:00.000",150.00,0,"Limpeza Facial",195.00,
+"Pablo Nascimento do Rosario",99999999999,9,"2025-05-17 00:00:00.000",150.00,2,"Limpeza Facial",195.00,"Não quero mais realizar a consulta"
+"Pablo Nascimento do Rosario",99999999999,9,"2025-05-17 00:00:00.000",150.00,2,"Peeling Químico",200.00,"Não quero mais realizar a consulta"
+Teste2,4848484848,7,"2025-05-13 13:00:00.000",200.00,1,"Peeling Químico",200.00,

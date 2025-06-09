@@ -1,11 +1,16 @@
 <?php
-
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename="export_consultas.csv"');
+
+// Força o BOM no início do arquivo (excel-friendly)
+echo "\xEF\xBB\xBF";
 
 require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
 
 try {
+
+
+
     $sql = "
         SELECT 
             u.nome AS NomeUsuario,
@@ -16,7 +21,6 @@ try {
             c.consultaConfirmada,
             p.descricaoProcedimento,
             p.valorProcedimento
-            c.motivoCancelamento
         FROM tblConsulta c
         JOIN tblUsuario u ON c.usuarioID = u.usuarioID
         JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
@@ -32,21 +36,20 @@ try {
         die("Nenhum dado encontrado para exportação.");
     }
 
-    // Criar arquivo CSV
-    $nomeArquivo = 'export_consultas.csv';
-    $arquivo = fopen($nomeArquivo, 'w');
+    
 
-    // Cabeçalhos
-    fputcsv($arquivo, array_keys($dados[0]));
+    $arquivo = fopen('php://output', 'w');
 
-    // Dados
+    // Cabeçalhos do CSV
+    fputcsv($arquivo, array_keys($dados[0]), ';');
+
+    // Dados do CSV
     foreach ($dados as $linha) {
-        fputcsv($arquivo, $linha);
+        fputcsv($arquivo, $linha,';');
     }
 
     fclose($arquivo);
-
-    echo "Exportação concluída com sucesso: <a href='$nomeArquivo'>Download do CSV</a>";
+    exit;
 
 } catch (PDOException $e) {
     echo "Erro ao exportar: " . $e->getMessage();
