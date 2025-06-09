@@ -1,4 +1,7 @@
 <?php
+
+// Força o BOM no início do arquivo (excel-friendly)
+echo "\xEF\xBB\xBF";
 require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
 
 session_start();
@@ -20,7 +23,6 @@ try {
             c.consultaConfirmada,
             p.descricaoProcedimento,
             p.valorProcedimento
-            c.motivoCancelamento
         FROM tblConsulta c
         JOIN tblUsuario u ON c.usuarioID = u.usuarioID
         JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
@@ -42,10 +44,10 @@ try {
     header('Content-Disposition: attachment; filename="minhas_consultas.csv"');
 
     $arquivo = fopen('php://output', 'w');
-    fputcsv($arquivo, array_keys($dados[0]));
+    fputcsv($arquivo, array_keys($dados[0]), ';');
 
     foreach ($dados as $linha) {
-        fputcsv($arquivo, $linha);
+        fputcsv($arquivo, $linha, ';');
     }
 
     fclose($arquivo);

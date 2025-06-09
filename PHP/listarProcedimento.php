@@ -66,6 +66,10 @@ try {
         </table>
     <?php endif; ?>
 
+    <div class="excel">
+    <a class="btn-export" href="exportarProcedimentos.php">Exportar dados em Excel</a>
+    </div>
+
     <br>
     <a class="btn-voltar" href="painelAdministrador.php">Voltar ao Painel do Administrador</a>
     <script src="../js/mascaras.js"></script>

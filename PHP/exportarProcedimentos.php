@@ -10,19 +10,7 @@ require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexa
 
 try {
     $sql = "
-        SELECT 
-        usuarioID,
-        roleUsuario,
-        nome,
-        dataNascimento,
-        emailUsuario,
-        CPF,
-        telefoneUsuario,
-        CEP,
-        endereco,
-        usuarioAtivoInativo,
-        dataCadastro
-        FROM tblUsuario ORDER BY UsuarioID;
+        SELECT * FROM tblProcedimentos ORDER BY procedimentoID;
     ";
 
     $stmt = $conn->prepare($sql);
@@ -34,7 +22,7 @@ try {
     }
 
     // Criar arquivo CSV
-    $nomeArquivo = 'export_usuarios.csv';
+    $nomeArquivo = 'export_procedimento.csv';
     $arquivo = fopen('php://output', 'w');
 
     // Cabeçalhos
