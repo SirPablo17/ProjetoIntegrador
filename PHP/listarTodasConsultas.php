@@ -9,14 +9,17 @@ if (!isset($_SESSION['admin_logado']) || !isset($_SESSION['admin_id'])) {
 }
 
 try {
-    // Seleciona as consultas com os procedimentos associados
-    $stmt = $conn->prepare("SELECT c.consultaID, tc.usuarioID, tc.nome, c.dataConsulta, p.descricaoProcedimento, p.valorProcedimento, c.consultaConfirmada
-                            FROM tblConsulta c
-                            LEFT JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
-                            LEFT JOIN tblProcedimentos p ON cp.procedimentoID = p.procedimentoID
-                            LEFT JOIN tblUsuario tc ON tc.usuarioID = c.usuarioID");
+   
+    $stmt = $conn->prepare(
+        "SELECT c.consultaID, tc.usuarioID, tc.nome, c.dataConsulta, p.descricaoProcedimento, p.valorProcedimento, c.consultaConfirmada
+        FROM tblConsulta c
+        LEFT JOIN tblConsultaProcedimento cp ON c.consultaID = cp.consultaID
+        LEFT JOIN tblProcedimentos p ON cp.procedimentoID = p.procedimentoID
+        LEFT JOIN tblUsuario tc ON tc.usuarioID = c.usuarioID
+        ORDER BY c.dataConsulta DESC");
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Erro ao listar consultas: " . $e->getMessage() . "</p>";
     return;
@@ -24,11 +27,6 @@ try {
 ?>
 <section class="listar-consultas">
     <h2>Listar Todas Consultas</h2>
-
-    <div class="box-search"> 
-	    <input type="search" class="form-control" placeholder= "Pesquisar" id="pesquisar">
-	    <button onclick="searchData()" class="btn">Pesquisar</button>
-    </div>
 
     <?php if (empty($consultas)): ?>
     <p>Não há consultas agendadas.</p>
@@ -102,18 +100,6 @@ try {
 </div>
 
 <script>
-
-var search = document.getElementById('pesquisar);
-
-search.addEventListener("keydown", function(event){
-	if(event.key === "Enter"){
-		searchData();}
-});
-
-function searchData(){
-	window.location = 'link' + search.value
-};
-
 function abrirPopup(url) {
     window.open(url, 'popupCancelar', 'width=500,height=500');
     return false; // impede o link de seguir normalmente
