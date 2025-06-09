@@ -309,7 +309,7 @@ visibility: hidden;
   cursor: pointer;
 }
 /* even event */
-.events .event:nth-child(even) {
+.events {
   background: transparent;
 }
 .events .event:hover {
