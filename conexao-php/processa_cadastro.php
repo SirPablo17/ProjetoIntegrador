@@ -11,8 +11,9 @@ try {
     $telefone = $_POST['telefoneUsuario'];
     $cep = $_POST['cepUsuario'];
     $email = $_POST['emailUsuario'];
-    $senha = $_POST['usuarioSenha']; // Estou assumindo que aqui é a senha
+    $senha = $_POST['usuarioSenha'];
     $endereco = $_POST['enderecoUsuario'];
+    $numeroCasa = $_POST ['numeroCasa'];
 
     $cpf = preg_replace('/[^0-9]/', '', $cpf);
     $telefone = preg_replace('/[^0-9]/', '', $telefone);
@@ -22,19 +23,20 @@ try {
     $role = 'cliente';
     $status = 1;
 
-    $sql = "INSERT INTO tblUsuario (roleUsuario, nome, CPF, endereco, emailUsuario, senhaUsuario, CEP, telefoneUsuario, dataNascimento, usuarioAtivoInativo)
-            VALUES (:roleUsuario, :nome, :cpf, :endereco, :email, :senha, :cep, :telefone, :dataNascimento, :status)";
+    $sql = "INSERT INTO tblUsuario (roleUsuario, nome, CPF, endereco, numeroCasa, emailUsuario, senhaUsuario, CEP, telefoneUsuario, dataNascimento, usuarioAtivoInativo)
+            VALUES (:roleUsuario, :nomeCompleto, :cpfUsuario, :endereco, :numeroCasa, :emailUsuario, :usuarioSenha, :cepUsuario, :telefoneUsuario, :dataNascimento, :status)";
 
     $query = $conn->prepare($sql);
 
     // Fazendo o bind de TODOS os parâmetros corretamente
     $query->bindParam(':roleUsuario', $role, PDO::PARAM_STR);
-    $query->bindParam(':nome', $nome, PDO::PARAM_STR);
-    $query->bindParam(':cpf', $cpf, PDO::PARAM_STR);
+    $query->bindParam(':nomeCompleto', $nome, PDO::PARAM_STR);
+    $query->bindParam(':cpfUsuario', $cpf, PDO::PARAM_STR);
     $query->bindParam(':endereco', $endereco, PDO::PARAM_STR);
-    $query->bindParam(':email', $email, PDO::PARAM_STR);
-    $query->bindParam(':senha', $senha, PDO::PARAM_STR);
-    $query->bindParam(':cep', $cep, PDO::PARAM_STR);
+    $query->bindParam(':numeroCasa', $numeroCasa, PDO::PARAM_STR);
+    $query->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
+    $query->bindParam(':usuarioSenha', $senha, PDO::PARAM_STR);
+    $query->bindParam(':cepUsuario', $cep, PDO::PARAM_STR);
     $query->bindParam(':telefone', $telefone, PDO::PARAM_STR);
     $query->bindParam(':dataNascimento', $dataNascimento, PDO::PARAM_STR);
     $query->bindParam(':status', $status, PDO::PARAM_INT);

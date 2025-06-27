@@ -251,6 +251,10 @@ section #topoDoSite {
     color: #771127;
 }
 
+.sobreMimIMG img {
+    border-radius: 10px;
+}
+
 footer {
     background-color: #771127;
     padding: 40px 0;

@@ -108,9 +108,9 @@
                         </ul>
                     </div>
                     <div class="footer-social">
-                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
             </div>

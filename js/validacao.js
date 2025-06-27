@@ -1,5 +1,3 @@
-
-
 function verificaCPF(strCPF) {
     var Soma;
     var Resto;
@@ -29,3 +27,16 @@ document.getElementById('cpfForm').addEventListener('submit', function(e) {
       document.getElementById('cpf').focus(); // Foca no campo de CPF após o erro
     }
   });
+
+
+function confirmarSenha(e) {
+    const senha = document.getElementById("senhaUsuario").value;
+    const confirmarSenha = document.getElementById("ConfirmarsenhaUsuario").value;
+
+    if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem.");
+        return false; // Cancela o envio do formulário
+    }
+
+    return true;
+}

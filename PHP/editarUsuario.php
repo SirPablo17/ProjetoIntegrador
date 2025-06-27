@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuarioAtivoInativo = isset($_POST['usuarioAtivoInativo']) ? 1 : 0;
     $CPF = $_POST['CPF'];
     $endereco = $_POST['endereco'];
+    $numeroCasa = $_POST['numeroCasa'];
     $CEP = $_POST['CEP'];
     $telefoneUsuario = $_POST['telefoneUsuario'];
     $dataNascimento = $_POST['dataNascimento'];
@@ -49,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 [usuarioAtivoInativo] = :usuarioAtivoInativo,
                 [CPF] = :CPF,
                 [endereco] = :endereco,
+                [numeroCasa] = :numeroCasa,
                 [CEP] = :CEP,
                 [telefoneUsuario] = :telefoneUsuario,
                 [dataNascimento] = :dataNascimento,
@@ -61,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_update_adm->bindParam(':usuarioAtivoInativo', $usuarioAtivoInativo);
         $stmt_update_adm->bindParam(':CPF', $CPF);
         $stmt_update_adm->bindParam(':endereco', $endereco);
+        $stmt_update_adm->bindParam(':numeroCasa', $numeroCasa);
         $stmt_update_adm->bindParam(':CEP', $CEP);
         $stmt_update_adm->bindParam(':telefoneUsuario', $telefoneUsuario);
         $stmt_update_adm->bindParam(':dataNascimento', $dataNascimento);
@@ -135,6 +138,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class = "campo"> 
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" value="<?php echo htmlspecialchars($adm['endereco']); ?>">
+            </div>
+
+            <div class = "campo"> 
+                <label for="numero">Endereço:</label>
+                <input type="text" id="numeroCasa" name="numeroCasa" value="<?php echo htmlspecialchars($adm['numeroCasa']); ?>">
             </div>
 
             <div class = "campo">

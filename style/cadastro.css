@@ -1,119 +1,69 @@
 @import url("style.css");
 
-/* Centralização do main */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
 
-/* Container do formulário */
-.cadastro {
-    max-width: 600px;
-    width: 100%;
-    background-color: #771127;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-    padding: 2rem 2.5rem;
-    margin-top: 5rem;
-}
-
-/* Título */
-.cadastro h2 {
-    color: #ECD8E0;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-/* Formulário */
 .cadastro_form {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 1rem 1.5rem;
-    align-items: center;
-    color: #ECD8E0;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 10rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
-/* Labels */
-.cadastro_form label {
+.form_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_group label {
     font-weight: 600;
-    text-align: right;
+    margin-bottom: 0.4rem;
+    color: #333;
 }
 
-/* Inputs */
-.cadastro_form input {
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
+.form_group input {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     border: 1px solid #ccc;
     background-color: #fff;
-    color: #333;
     font-size: 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    width: 100%;
+    transition: 0.2s ease;
 }
 
-/* Placeholder suave */
-.cadastro_form input::placeholder {
-    color: #999;
-}
-
-/* Foco bonito */
-.cadastro_form input:focus {
+.form_group input:focus {
     border-color: #771127;
-    box-shadow: 0 0 4px rgba(119, 17, 39, 0.3);
+    box-shadow: 0 0 5px rgba(119, 17, 39, 0.2);
     outline: none;
 }
 
-/* Centralizar botão */
 .centralizar_botao {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
-/* Botão ação */
 .botao_acao {
-    background-color: #ECD8E0;
-    color: #771127;
+    background-color: #771127;
+    color: #ECD8E0;
     border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .botao_acao:hover {
-    cursor: pointer;
-    background-color: #771127;
-    color: #ECD8E0;
-    transition: 0.7s;
-    border: 1px solid #ECD8E0;
-}
-
-a[href*="painelAdministrador.php"] {
-    display: inline-block;
-    margin-top: 1.5rem;
-    text-decoration: none;
-    color: #771127;
-    font-weight: 600;
-}
-
-a[href*="painelAdministrador.php"]:hover {
-    text-decoration: underline;
+    background-color: #5d0f1e;
+    transform: translateY(-1px);
 }
 
 /* Responsivo */
 @media (max-width: 600px) {
     .cadastro_form {
         grid-template-columns: 1fr;
-    }
-
-    .cadastro_form label {
-        text-align: left;
     }
 
     .centralizar_botao {
