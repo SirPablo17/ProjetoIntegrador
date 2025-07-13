@@ -28,7 +28,7 @@ try {
     $stmt->execute();
     if ($stmt->fetchColumn() > 0) {
         $_SESSION['mensagem_erro'] = "Já existe uma consulta nesse horário.";
-        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/marcarConsulta.php');
+        header('Location: /ProjetoIntegrador/PHP/marcarConsulta.php');
         exit;
     }
 
@@ -60,7 +60,7 @@ try {
     }
 
     $_SESSION['mensagem_sucesso'] = "Consulta marcada com sucesso!";
-    header('Location: /Projeto-PI---TSI---2--semestre-/PHP/calendario.php');
+    header('Location: /ProjetoIntegrador/PHP/calendario.php');
     exit;
 
 } catch (PDOException $e) {

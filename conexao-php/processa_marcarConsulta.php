@@ -16,7 +16,7 @@ $procedimentosSelecionados = $_POST['procedimentos'] ?? []; // array de procedim
 // ✅ Validação: impede seguir sem selecionar procedimentos
 if (empty($procedimentosSelecionados)) {
     $_SESSION['mensagem_erro'] = "Por favor, selecione ao menos um procedimento para marcar a consulta.";
-    header('Location: /Projeto-PI---TSI---2--semestre-/PHP/marcarConsulta.php');
+    header('Location: /ProjetoIntegrador/PHP/marcarConsulta.php');
     exit;
 }
 
@@ -76,7 +76,7 @@ try {
 
     // Mensagem de sucesso
     $_SESSION['mensagem_sucesso'] = "Consulta marcada com sucesso!";
-    header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelCliente.php');
+    header('Location: /ProjetoIntegrador/PHP/painelCliente.php');
     exit;
 
 } catch (PDOException $e) {

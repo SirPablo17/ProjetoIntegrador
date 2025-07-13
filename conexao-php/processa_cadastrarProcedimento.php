@@ -27,7 +27,7 @@ try {
 
     if ($query->execute()) {
         $_SESSION['mensagem_sucesso'] = "Procedimento cadastrado com sucesso!";
-        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/cadastrarProcedimento.php');
+        header('Location: /ProjetoIntegrador/PHP/cadastrarProcedimento.php');
         exit;
     } else {
         echo "<p>Erro na execução da query:</p>";

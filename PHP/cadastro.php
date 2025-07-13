@@ -35,12 +35,12 @@
       <form class="cadastro_form" action="../conexao-php/processa_cadastro.php" method="POST">
         <div class="form_group">
           <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          <input type="text" id="nome" name="nomeCompleto" placeholder="Seu nome">
         </div>
 
         <div class="form_group">
           <label for="cpf">CPF</label>
-          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" oninput="CPF(this)">
+          <input type="text" id="cpf" name="cpfUsuario" placeholder="000.000.000-00" oninput="CPF(this)">
         </div>
 
         <div class="form_group">
@@ -50,22 +50,22 @@
 
         <div class="form_group">
           <label for="telefone">Telefone</label>
-          <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999"  oninput="TEL(this)">
+          <input type="text" id="telefone" name="telefoneUsuario" placeholder="(99) 99999-9999"  oninput="TEL(this)">
         </div>
 
         <div class="form_group">
           <label for="cep">CEP</label>
-          <input type="text" id="cep" name="cep" placeholder="00000000" onblur="buscarCEP()">
+          <input type="text" id="cep" name="cepUsuario" placeholder="00000000" onblur="buscarCEP()">
         </div>
 
         <div class="form_group">
           <label for="endereco">Endereço</label>
-          <input type="text" id="endereco" name="endereco" placeholder="Rua...">
+          <input type="text" id="endereco" name="enderecoUsuario" placeholder="Rua...">
         </div>
 
         <div class="form_group">
           <label for="endereco">Número</label>
-          <input type="text" id="Numero" name="endereco" placeholder="Número...">
+          <input type="text" id="Numero" name="numeroCasa" placeholder="Número...">
         </div>
 
         <div class="form_group">
@@ -75,7 +75,7 @@
 
         <div class="form_group">
           <label for="senhaUsuario">Senha</label>
-          <input type="password" id="senhaUsuario" name="senhaUsuario" placeholder="Digite sua senha">
+          <input type="password" id="senhaUsuario" name="usuarioSenha" placeholder="Digite sua senha">
         </div>
 
         <div class="form_group">

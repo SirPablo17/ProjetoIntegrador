@@ -9,8 +9,7 @@ $database = "ProjetoIntegrador2";
 try {
     $conn = new PDO("sqlsrv:Server=$serverName;Database=$database;", null, null);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Conexão estabelecida com autenticação do Windows!";
-
+    
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage(); 
 }

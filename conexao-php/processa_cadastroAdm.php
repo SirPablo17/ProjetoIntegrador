@@ -6,14 +6,14 @@ try {
 
     // Coletando os dados do formulário
     $nome = $_POST['nomeCompleto'];
-    $dataNascimento = $_POST['dataNascimento'];
     $cpf = $_POST['cpfUsuario'];
-    $telefone = $_POST['telefoneUsuario'];
-    $cep = $_POST['cepUsuario'];
+    $endereco = $_POST['enderecoUsuario'];
+    $numeroCasa = $_POST ['numeroCasa'];
     $email = $_POST['emailUsuario'];
     $senha = $_POST['usuarioSenha'];
-    $endereco = $_POST['enderecoUsuario'];
-    $numeroCasa = $_POST['numeroCasa'];
+    $cep = $_POST['cepUsuario'];
+    $telefone = $_POST['telefoneUsuario'];
+    $dataNascimento = $_POST['dataNascimento'];
 
     $cpf = preg_replace('/[^0-9]/', '', $cpf);
     $telefone = preg_replace('/[^0-9]/', '', $telefone);
@@ -24,26 +24,26 @@ try {
     $status = 1;
 
     $sql = "INSERT INTO tblUsuario (roleUsuario, nome, CPF, endereco, numeroCasa, emailUsuario, senhaUsuario, CEP, telefoneUsuario, dataNascimento, usuarioAtivoInativo)
-            VALUES (:roleUsuario, :nome, :cpf, :endereco, :numeroCasa, :email, :senha, :cep, :telefone, :dataNascimento, :status)";
+            VALUES (:roleUsuario, :nomeCompleto, :cpfUsuario, :enderecoUsuario, :numeroCasa, :emailUsuario, :usuarioSenha, :cepUsuario, :telefoneUsuario, :dataNascimento, :status)";
 
     $query = $conn->prepare($sql);
 
     // Fazendo o bind de TODOS os parâmetros corretamente
     $query->bindParam(':roleUsuario', $role, PDO::PARAM_STR);
-    $query->bindParam(':nome', $nome, PDO::PARAM_STR);
-    $query->bindParam(':cpf', $cpf, PDO::PARAM_STR);
-    $query->bindParam(':endereco', $endereco, PDO::PARAM_STR);
+    $query->bindParam(':nomeCompleto', $nome, PDO::PARAM_STR);
+    $query->bindParam(':cpfUsuario', $cpf, PDO::PARAM_STR);
+    $query->bindParam(':enderecoUsuario', $endereco, PDO::PARAM_STR);
     $query->bindParam(':numeroCasa', $numeroCasa, PDO::PARAM_STR);
-    $query->bindParam(':email', $email, PDO::PARAM_STR);
-    $query->bindParam(':senha', $senha, PDO::PARAM_STR);
-    $query->bindParam(':cep', $cep, PDO::PARAM_STR);
-    $query->bindParam(':telefone', $telefone, PDO::PARAM_STR);
+    $query->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
+    $query->bindParam(':usuarioSenha', $senha, PDO::PARAM_STR);
+    $query->bindParam(':cepUsuario', $cep, PDO::PARAM_STR);
+    $query->bindParam(':telefoneUsuario', $telefone, PDO::PARAM_STR);
     $query->bindParam(':dataNascimento', $dataNascimento, PDO::PARAM_STR);
     $query->bindParam(':status', $status, PDO::PARAM_INT);
 
     if ($query->execute()) {
         $_SESSION['mensagem_sucesso'] = "Administrador cadastrado com sucesso!";
-        header('Location: /Projeto-PI---TSI---2--semestre-/PHP/cadastrar_administrador.php');
+        header('Location: /ProjetoIntegrador/PHP/cadastrar_administrador.php');
         exit;
     } else {
         echo "<p>Erro na execução da query:</p>";

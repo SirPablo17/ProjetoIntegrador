@@ -6,7 +6,7 @@
 
 session_start();
 
-require_once ('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
+require_once ('C:\xampp\htdocs\ProjetoIntegrador\conexao-php\conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
     header("Location:login.php");

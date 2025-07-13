@@ -28,7 +28,7 @@ try {
             $_SESSION['admin_logado'] = true;
             $_SESSION['admin_id'] = $user[0]['usuarioID'];;
             $_SESSION['admin_nome'] = $user[0]['nome'];
-            header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelAdministrador.php');
+            header('Location: /ProjetoIntegrador/PHP/painelAdministrador.php');
             exit;
         }
         elseif ($queryCliente->execute()) {
@@ -41,18 +41,18 @@ try {
                 $_SESSION['cliente_logado'] = true;
                 $_SESSION['cliente_id'] = $user[0]['usuarioID'];
                 $_SESSION['cliente_nome'] = $user[0]['nome'];
-                header('Location: /Projeto-PI---TSI---2--semestre-/PHP/painelCliente.php');
+                header('Location: /ProjetoIntegrador/PHP/painelCliente.php');
                 exit;
             }
             else {
                 $_SESSION['mensagem_erro'] = "Usuário sem permissão";
-                header('Location: /Projeto-PI---TSI---2--semestre-/PHP/login.php?erro');
+                header('Location: /ProjetoIntegrador/PHP/login.php?erro');
                 exit;
             }
         }
         else {
             $_SESSION['mensagem_erro'] = "Nome dp usuário ou senha incorreto";
-            header('Location: /Projeto-PI---TSI---2--semestre-/PHP/login.php?erro');
+            header('Location: /ProjetoIntegrador/PHP/login.php?erro');
             exit;
         }
     }

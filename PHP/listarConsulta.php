@@ -1,5 +1,5 @@
 <?php
-require_once('C:\xampp\htdocs\Projeto-PI---TSI---2--semestre-\conexao-php\conexao.php');
+require_once('C:\xampp\htdocs\ProjetoIntegrador\conexao-php\conexao.php');
 
 // Verifica se o cliente está logado
 if (!isset($_SESSION['cliente_logado']) || !isset($_SESSION['cliente_id'])) {
