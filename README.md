@@ -5,9 +5,11 @@ Uma aplicação web para **agendamento de consultas online**, desenvolvida como 
 ## ✨ Funcionalidades
 
 - Cadastro de usuários e pacientes
+- Restrições de acesso de acordo com o perfil (Administrador e usuário Comum)
 - Agendamento de consultas
 - Visualização de consultas marcadas
 - Sistema simples e intuitivo
+- Vizualização de Consultas agendadas por meio de um calendário interativo
 
 ## 🚀 Tecnologias Utilizadas
 
