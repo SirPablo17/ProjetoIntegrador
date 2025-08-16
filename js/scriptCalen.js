@@ -544,7 +544,7 @@ function addEvents(events) {
 
 
 function carregarConsultasDoBanco() {
-  fetch('/Projeto-PI---TSI---2--semestre-/conexao-php/buscar_consultas.php')
+  fetch('/ProjetoIntegrador/conexao-php/buscar_consultas.php')
     .then(response => response.json())
     .then(data => {
       if (data.error) {
